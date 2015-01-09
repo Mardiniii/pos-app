@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109204610) do
+ActiveRecord::Schema.define(version: 20150109212438) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "establishment_ingredients", force: :cascade do |t|
+    t.integer  "establishment_id"
+    t.integer  "ingredient_id"
+    t.integer  "quantity"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "establishment_ingredients", ["establishment_id"], name: "index_establishment_ingredients_on_establishment_id"
+  add_index "establishment_ingredients", ["ingredient_id"], name: "index_establishment_ingredients_on_ingredient_id"
 
   create_table "establishments", force: :cascade do |t|
     t.string   "name"
@@ -25,6 +42,61 @@ ActiveRecord::Schema.define(version: 20150109204610) do
   end
 
   add_index "establishments", ["user_id"], name: "index_establishments_on_user_id"
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.string   "unit_of_measurement"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "invoice_products", force: :cascade do |t|
+    t.integer  "invoice_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "invoice_products", ["invoice_id"], name: "index_invoice_products_on_invoice_id"
+  add_index "invoice_products", ["product_id"], name: "index_invoice_products_on_product_id"
+
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "invoices", ["order_id"], name: "index_invoices_on_order_id"
+
+  create_table "order_products", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "order_products", ["order_id"], name: "index_order_products_on_order_id"
+  add_index "order_products", ["product_id"], name: "index_order_products_on_product_id"
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "table"
+    t.integer  "establishment_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "orders", ["establishment_id"], name: "index_orders_on_establishment_id"
+
+  create_table "product_ingredients", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "ingredient_id"
+    t.integer  "quantity"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "product_ingredients", ["ingredient_id"], name: "index_product_ingredients_on_ingredient_id"
+  add_index "product_ingredients", ["product_id"], name: "index_product_ingredients_on_product_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"

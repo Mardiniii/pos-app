@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  table: 1
+  establishment_id: 
+
+two:
+  table: 1
+  establishment_id: 
