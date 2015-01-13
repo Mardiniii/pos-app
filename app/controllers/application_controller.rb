@@ -12,8 +12,10 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(user)
     if params[:user_type] == 'Ordenes'
     	orders_path
-    else
-    	root_path
+    elsif params[:user_type] == 'Cocina'
+    	kitchen_path
+    elsif params[:user_type] == 'Administrador'
+    	admin_path
     end
   end
 end

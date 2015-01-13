@@ -1,8 +1,1 @@
-<% if user_signed_in? %>
-	<%= link_to 'Log Out', destroy_user_session_path, method: :delete, :class => "btn btn-warning" %>
-<% else %>
-	<%= link_to 'Log In', new_user_session_path, class: "btn boton btn-warning" %>
-	<%= link_to 'Sign Up', new_user_registration_path, class: "btn boton btn-warning" %>
-<% end %>	
-
 <h1>Bienvenido a tu nueva POS-APP</h1>
