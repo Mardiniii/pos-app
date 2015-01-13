@@ -27,7 +27,9 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  enum role: [:Administracion, :Ordenes, :Cocina]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  validates :name, :last_name, :identification_number, :address,:cellphone, :phone, :email, :password, :password_confirmation, presence: true
   has_many :establishments
 end
