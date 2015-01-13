@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
     	kitchen_path
     elsif params[:user_type] == 'Administrador'
     	admin_path
+    else
+      root_path
     end
   end
 end
