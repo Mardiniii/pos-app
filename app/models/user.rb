@@ -17,11 +17,12 @@
 #  updated_at             :datetime
 #  name                   :string
 #  identification_number  :string
-#  role                   :integer
 #  last_name              :string
 #  phone                  :string
 #  cellphone              :string
 #  address                :string
+#  state_id               :integer
+#  city_id                :integer
 #
 
 class User < ActiveRecord::Base
