@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :last_name, :identification_number,:city_id,:state_id, :address,:cellphone, :phone, :email, :password, :password_confirmation) }
     devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :last_name, :identification_number,:city_id,:state_id,:address,:cellphone, :phone, :email, :password, :password_confirmation) }
   end
+
+  def after_sign_in_path_for(user)
+    if params[:user_type] == 'Ordenes'
+    	orders_path
+    else
+    	root_path
+    end
+  end
 end

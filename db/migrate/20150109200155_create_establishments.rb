@@ -6,10 +6,8 @@ class CreateEstablishments < ActiveRecord::Migration
       t.string :phone
       t.integer :tables_number
       t.integer :seats_number
-      t.references :user, index: true
 
       t.timestamps null: false
     end
-    add_foreign_key :establishments, :users
   end
 end
