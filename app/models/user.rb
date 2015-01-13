@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
   enum role: [:Administracion, :Ordenes, :Cocina]
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :name, :last_name, :identification_number, :address,:cellphone, :phone, :email, :password, :password_confirmation, presence: true
+  validates :name, :last_name, :identification_number, :address,:city,:state,:cellphone, :phone, :email, :password, :password_confirmation, presence: true
   has_many :establishments
+  belongs_to :city
+  belongs_to :state
 end
