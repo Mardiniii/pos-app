@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'admin' => 'admins#home'
   get 'kitchen' => 'cook_rooms#home'
   get 'config_user' => 'admins#setup'
+  post 'contact' => 'welcome#contact'
   root 'welcome#home'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

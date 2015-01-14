@@ -38,12 +38,24 @@ header {
 .navbar-default .navbar-brand, .navbar-default .navbar-nav li a {
 	color: white;
 }
+section#contact {
+	height: 100vh;
+	background-image: url(map-image.png);
+	background-position: center;
+	background-repeat: none; 
+}
 .intro-text {
 	padding-top: 150px;
 }
-#services {
-	padding-top: 150px;
-	padding-bottom: 150px;
+footer{
+	padding: 25px 0;
+	text-align: center;
+}
+#how_it_works, #team, footer {
+	background-color: #FFFFCC;
+}
+#services, #how_it_works, #contact {
+	padding-top: 130px;
 }
 .intro-medium {
 	font-size: 40px;
@@ -59,6 +71,8 @@ header {
 .service-large {
 	font-size: 40px;
 	font-weight: bold;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .service-small {
 	font-size: 16px;
@@ -68,5 +82,10 @@ header {
 	font-style: italic;
 	font-weight: 400;
 	color: gray;
+}
+
+#navbar.navbar-maple {
+	padding: 10px 0;
+	background-color: #222;
 }
 
