@@ -15,4 +15,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require scroll-navbar
+//= require scroll-to
 //= require_tree .

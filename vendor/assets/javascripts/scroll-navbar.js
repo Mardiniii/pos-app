@@ -1,6 +1,6 @@
 $(function(){
     $(window).scroll(function(){
-        if ($(this).scrollTop() > 300){
+        if ($(this).scrollTop() > 75){
             $('.navbar-default').addClass('navbar-maple');
         }
         else{
