@@ -3,6 +3,6 @@ class WelcomeController < ApplicationController
 	end
 
 	def contact
-		redirect_to root_path
+		UserMailer.contact(params[:name],params[:email],params[:phone],params[:text]).deliver_now
 	end
 end

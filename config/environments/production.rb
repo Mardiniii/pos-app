@@ -14,6 +14,15 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
   config.action_mailer.default_url_options = { :host => 'http://pos-app-mardini.herokuapp.com/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :authentication => :plain,
+    :address => 'smtp.mailgun.org',
+    :port => 587,
+    :domain =>'sandbox0b69790abb7f460db1096b19276f36da.mailgun.org',
+    :user_name => 'postmaster@sandbox0b69790abb7f460db1096b19276f36da.mailgun.org',
+    :password => 'c3ec6d4c23708c4a2e4f842e469ab69e'
+  }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
