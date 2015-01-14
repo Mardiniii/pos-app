@@ -13,3 +13,27 @@
  *= require_tree .
  *= require_self
  */
+
+header {
+		text-align: center;
+		color: #fff;
+		background-attachment: scroll;
+		background-image: url(http://www.cervo.ch/media/archive1/mediendownloads/restaurant/restaurant_dinner02.jpg);
+		background-position: center center;
+		background-repeat: none;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;
+		-o-background-size: cover;
+		height: 100vh;
+		width: 100%;
+}
+#navbar{
+	background-color: transparent;
+	border-bottom: none;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav li a {
+	color: white;
+}
+
