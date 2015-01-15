@@ -16,6 +16,27 @@ class EstablishmentsController < ApplicationController
 		@establishment = Establishment.find(params[:id])
 	end
 
+	def edit
+		@establishment = Establishment.find(params[:id])
+	end
+
+	def update
+		@establishment = Establishment.find(params[:id])
+		if @establishment.update(establishment_params)
+			redirect_to @establishment			
+		end
+	end
+
+	def index
+		@establishments = Establishment.all
+	end
+
+	def destroy
+		@establishment = Establishment.find(params[:id])
+		@establishment.destroy
+		redirect_to establishments_path
+	end
+
 	private
 		def establishment_params
   		params.require(:establishment).permit(:name, :address, :phone, :tables_number, :seats_number)
