@@ -1,4 +1,44 @@
-<h1>Aqui se debe ver la vista de administrador</h1>
+<div class="page-header">
+  <h1>Bienvenido <%= current_user.name %> <%= current_user.last_name %> <small>Escoja una opcion</small></h1>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<div class="thumbnail text-center">
+				<span class="fa-stack fa-4">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-bar-chart fa-stack-1x fa-inverse"></i>
+				</span>
+				<div class="caption text-center">
+					<p>INVENTARIO</p>
+			    </div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail text-center">
+				<span class="fa-stack fa-4">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-cutlery fa-stack-1x fa-inverse"></i>
+				</span>
+				<div class="caption text-center">
+					<p>ORDENES</p>
+			    </div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="thumbnail text-center">
+				<span class="fa-stack fa-4">
+				  <i class="fa fa-square fa-stack-2x"></i>
+				  <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+				</span>
+				<div class="caption text-center">
+			        <p>DASHBOARD</p>
+			    </div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<%= link_to 'Agregar establecimiento', root_path, :class => 'btn btn-warning' %>
+	</div>
+</div>
 
-<%= link_to 'Editar datos de usuario', edit_user_registration_path, :class => 'btn btn-warning' %>
-<%= link_to 'Agregar establecimiento', root_path, :class => 'btn btn-warning' %>
