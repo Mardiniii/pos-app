@@ -53,6 +53,11 @@ header {
 		border-radius: 3px;
 }
 
+#navbar.navbar-not-home {
+	padding: 10px 0;
+	background-color: #222;
+}
+
 #navbar.navbar-maple {
 	padding: 10px 0;
 	background-color: #222;

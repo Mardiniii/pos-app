@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+	<nav <% if current_page?(root_path) %>  class="navbar navbar-default navbar-fixed-top" id="navbar" <%else%> id="navbar" class="navbar navbar-default navbar-not-home"  <%end%>>
 	  <div class="container">
 	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
@@ -24,11 +24,13 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a class="page-scroll" href="#services">Que es POS-App?</a></li>
-	        <li><a class="page-scroll" href="#how_it_works">Como Funciona?</a></li>
-	        <li><a class="page-scroll" href="#portfolio">Cobertura</a></li>
-	        <li><a class="page-scroll" href="#team">Equipo</a></li>
-	        <li><a class="page-scroll" href="#contact">Contacto</a></li>
+					<% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
+		        <li><a class="page-scroll" href="#services">Que es POS-App?</a></li>
+		        <li><a class="page-scroll" href="#how_it_works">Como Funciona?</a></li>
+		        <li><a class="page-scroll" href="#portfolio">Cobertura</a></li>
+		        <li><a class="page-scroll" href="#team">Equipo</a></li>
+		        <li><a class="page-scroll" href="#contact">Contacto</a></li>
+	        <% end %>
 	        <% if user_signed_in? %>
 	        	<li><%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li> 	
 	        <% else %>
