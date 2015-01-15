@@ -35,4 +35,9 @@ class User < ActiveRecord::Base
   has_many :establishments
   belongs_to :city
   belongs_to :state
+  after_create :send_email
+
+  def send_email
+  	UserMailer.welcome_email(self).deliver
+  end
 end
