@@ -1,0 +1,25 @@
+<%= form_for @establishment do |f| %>
+	<div class="field form-group">
+  	<%= f.label :name %><br>
+  	<%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+  	<%= f.label :address %><br>
+  	<%= f.text_field :address, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+  	<%= f.label :phone %><br>
+  	<%= f.text_field :phone, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+  	<%= f.label :numero_de_mesas %><br>
+  	<%= f.number_field :tables_number, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+  	<%= f.label :numero_de_sillas %><br>
+  	<%= f.number_field :seats_number, :class => "form-control" %>
+  </div>
+  <div class="actions form-group text-center">
+  	<%= f.submit 'Agregar Restaurante', :class => 'btn btn-primary btn-lg btn-warning' %>
+  </div>
+<% end %>

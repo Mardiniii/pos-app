@@ -1,0 +1,14 @@
+<div class="row margin-container">
+	<div class="col-md-4 col-md-offset-4 text-center">
+		<h2 class="text-center">Nuevo Establecimiento Agregado</h2>
+		<div class="container text-left">
+			<h4>Nombre: <%= @establishment.name %></h4>
+			<h4>Direccion: <%= @establishment.address %></h4>
+			<h4>Telefono: <%= @establishment.phone %></h4>
+			<h4>Numero de mesas: <%= @establishment.tables_number %></h4>
+			<h4>Numero de asientos: <%= @establishment.seats_number %></h4>
+			<h4>Fecha: <%= @establishment.created_at %></h4>
+		</div>
+		<%= link_to 'Continuar', admin_path, :class => 'btn btn-warning' %> 
+	</div>
+</div>
