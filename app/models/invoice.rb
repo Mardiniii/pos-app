@@ -10,5 +10,5 @@
 
 class Invoice < ActiveRecord::Base
   belongs_to :order
-  has_many :invoice_products
+  has_many :invoice_products, dependent: :destroy
 end

@@ -14,7 +14,7 @@
 class Product < ActiveRecord::Base
   belongs_to :categorie
   belongs_to :establishment
-  has_many :product_ingredients
+  has_many :product_ingredients, dependent: :destroy
   has_many :order_products
   has_many :invoice_products
 end

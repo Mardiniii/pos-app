@@ -1,17 +1,21 @@
-<table>
-	<tr>
-		<th>Establecimiento</th>
-		<th>Producto</th>
-		<th>Cantidad</th>
-	  <th>Editar - Borrar</th>
-	</tr>
-	<% @items.each do |item| %>
-		<tr>
-			<td> <%= item.establishment_id %> </td>
-			<td> <%= item.ingredient.name %> </td>
-			<td> <%= item.quantity %> </td>
-			<td> <%= link_to 'Editar', edit_inventario_path(item) %> - <%= link_to inventario_path(item), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
-		</tr>
-	<% end %>
-</table>
-<%= link_to 'Agregar Item al inventario', new_inventario_path %>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table">
+			<tr>
+				<th>Establecimiento</th>
+				<th>Producto</th>
+				<th>Cantidad</th>
+			  <th>Editar - Borrar</th>
+			</tr>
+			<% @items.each do |item| %>
+				<tr>
+					<td> <%= item.establishment_id %> </td>
+					<td> <%= item.ingredient.name %> </td>
+					<td> <%= item.quantity %> </td>
+					<td> <%= link_to 'Editar', edit_inventario_path(item) %> - <%= link_to inventario_path(item), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
+				</tr>
+			<% end %>
+		</table>
+		<%= link_to 'Agregar Item al inventario', new_inventario_path %>
+	</div>
+</div>

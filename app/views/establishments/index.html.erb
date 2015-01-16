@@ -1,21 +1,25 @@
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Direccion</th>
-		<th>Telefono</th>
-		<th>Numero de mesas</th>
-		<th>Numero de sillas</th>
-	  <th>Editar - Borrar</th>
-	</tr>
-	<% @establishments.each do |e| %>
-		<tr>
-			<td> <%= e.name %> </td>
-			<td> <%= e.address %> </td>
-			<td> <%= e.phone %> </td>
-			<td> <%= e.tables_number %> </td>
-			<td> <%= e.seats_number %> </td>
-			<td> <%= link_to 'Editar', edit_establishment_path(e) %> - <%= link_to establishment_path(e), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
-		</tr>
-	<% end %>
-</table>
-<%= link_to 'Agregar establecimiento', new_establishment_path %>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table">
+			<tr>
+				<th>Name</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
+				<th>Numero de mesas</th>
+				<th>Numero de sillas</th>
+			  <th>Editar - Borrar</th>
+			</tr>
+			<% @establishments.each do |e| %>
+			<tr>
+				<td> <%= e.name %> </td>
+				<td> <%= e.address %> </td>
+				<td> <%= e.phone %> </td>
+				<td> <%= e.tables_number %> </td>
+				<td> <%= e.seats_number %> </td>
+				<td> <%= link_to 'Editar', edit_establishment_path(e) %> - <%= link_to establishment_path(e), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
+			</tr>
+			<% end %>
+		</table>
+		<%= link_to 'Agregar establecimiento', new_establishment_path %>
+	</div>
+</div>

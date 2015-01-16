@@ -16,7 +16,7 @@
 class Establishment < ActiveRecord::Base
 	validates :name, :address, :phone, :tables_number,:seats_number,:user_id, presence: true
   belongs_to :user
-  has_many :establishment_ingredients
-  has_many :products
-  has_many :orders
+  has_many :establishment_ingredients, dependent: :destroy
+  has_many :products, dependent: :destroy
+  has_many :orders, dependent: :destroy
 end
