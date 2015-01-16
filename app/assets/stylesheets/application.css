@@ -14,7 +14,9 @@
  *= require_tree .
  *= require_self
  */
-
+body {
+	font-family: 'Raleway';
+}
 header {
 		text-align: center;
 		color: #fff;
@@ -31,6 +33,7 @@ header {
 }
 
 .navbar-default {
+	font-family: 'Raleway';
 	padding: 25px 0;
 	border: 0;
 	background-color: transparent;
@@ -44,9 +47,15 @@ header {
 
 .navbar-default .navbar-brand {
 		font-size: 2em;
+		font-family: 'Raleway';
+		font-size: 25px;
 		-webkit-transition: all .3s;
 		-moz-transition: all .3s;
 		transition: all .3s;
+}
+
+ul.navbar-nav li {
+	font-size: 12px;
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -72,9 +81,9 @@ header {
 }
 section#contact {
 	height: 100vh;
-	background-image: url(map-image.png);
-	background-position: center;
-	background-repeat: none; 
+	background-image: url(http://i592.photobucket.com/albums/tt5/Mardini03/word_map.png);
+	background-repeat: no-repeat; 
+    background-position: center;
 }
 .intro-text {
 	padding-top: 150px;
@@ -90,15 +99,20 @@ footer{
 	padding-top: 130px;
 }
 .intro-medium {
-	font-size: 40px;
+	font-size: 20px;
 	line-height: 40px;
+	text-shadow: 2px 2px black;
 }
 .intro-large {
-	font-size: 75px;
+	padding-top: 320px;
+	font-size: 35px;
 	line-height: 75px;
+	text-shadow: 2px 2px black;
 }
 #submedium {
-	padding-top: 180px;
+	padding-top: 130px;
+	padding-bottom: 20px;
+	text-shadow: 1px 1px black;
 }
 .service-large {
 	font-size: 40px;
@@ -123,4 +137,10 @@ footer{
 }
 .fa-4 {
 	font-size: 7em;
+}
+#dropdown {
+	background-color: #222;
+}
+#dropdown_menu {
+	background-color: #222;
 }
