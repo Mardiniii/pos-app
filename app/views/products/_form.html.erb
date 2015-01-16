@@ -1,0 +1,21 @@
+<%= form_for @product do |f| %>
+	<div class="field form-group">
+  	<%= f.label :nombre %><br>
+  	<%= f.text_field :name, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+  	<%= f.label :precio %><br>
+  	<%= f.number_field :precio, :class => "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :categoria %><br>
+    <%= f.collection_select(:categorie_id, Categorie.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :establecimiento %><br>
+    <%= f.collection_select(:establishment_id, Establishment.all, :id, :establishment, {include_blank: true}, {:class => 'form-control'}) %>
+  </div>
+  <div class="actions form-group text-center">
+  	<%= f.submit 'Guardar Restaurante', :class => 'btn btn-primary btn-lg btn-warning' %>
+  </div>
+<% end %>
