@@ -8,3 +8,4 @@
 
 cities = City.create([{ name: 'Medellin' }, { name: 'Bogota' }, { name: 'Barranquilla' }, { name: 'Pereira' }, { name: 'Cartagena' }])
 states = State.create([{ name: 'Antioquia' }, { name: 'Cundinamarca' }, { name: 'Atlantico' }, { name: 'Risaralda' }, { name: 'Bolivar' }])
+categories = Category.create([{ name: 'Bebidas'}, { name: 'Entradas'}, { name: 'Platos Fuertes'}, {name: 'Postres'} ])
