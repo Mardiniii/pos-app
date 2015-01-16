@@ -1,19 +1,23 @@
-<table>
-	<tr>
-		<th>Name</th>
-		<th>Precio</th>
-		<th>Categoria</th>
-		<th>Establecimiento</th>
-	  <th>Editar - Borrar</th>
-	</tr>
-	<% @products.each do |p| %>
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<table class="table">
 		<tr>
-			<td> <%= p.name %> </td>
-			<td> <%= p.precio %> </td>
-			<td> <%= p.category.name %> </td>
-			<td> <%= p.establishment.name %> </td>
-			<td> <%= link_to 'Editar', edit_establishment_path(p) %> - <%= link_to establishment_path(p), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
+			<th>Name</th>
+			<th>Precio</th>
+			<th>Categoria</th>
+			<th>Establecimiento</th>
+		  <th>Opciones</th>
 		</tr>
-	<% end %>
-</table>
-<%= link_to 'Agregar producto', new_product_path %>
+		<% @products.each do |p| %>
+			<tr>
+				<td> <%= p.name %> </td>
+				<td> <%= p.precio %> </td>
+				<td> <%= Categorie.find(p.categorie_id).name %> </td>
+				<td> <%= p.establishment.name %> </td>
+				<td> <%= link_to edit_product_path(p) do %> Editar <% end %> - <%= link_to product_path(p), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %> - <%= link_to 'Ver Receta', p %></td>
+			</tr>
+		<% end %>
+	</table>
+	<%= link_to 'Agregar producto', new_product_path %>
+	</div>
+</div>

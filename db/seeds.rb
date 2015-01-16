@@ -8,4 +8,5 @@
 
 cities = City.create([{ name: 'Medellin' }, { name: 'Bogota' }, { name: 'Barranquilla' }, { name: 'Pereira' }, { name: 'Cartagena' }])
 states = State.create([{ name: 'Antioquia' }, { name: 'Cundinamarca' }, { name: 'Atlantico' }, { name: 'Risaralda' }, { name: 'Bolivar' }])
-categories = Category.create([{ name: 'Bebidas'}, { name: 'Entradas'}, { name: 'Platos Fuertes'}, {name: 'Postres'} ])
+categories = Categorie.create([{ name: 'Bebidas'}, { name: 'Entradas'}, { name: 'Platos Fuertes'}, {name: 'Postres'} ])
+ingredientes = Ingredient.create([{name: 'Coca-Cola', unit_of_measurement: 'Unidades'},{name: 'Porcion-Pollo', unit_of_measurement: 'Unidades'},{name: 'Porcion-res', unit_of_measurement: 'Unidades'},{name: 'Arepa', unit_of_measurement: 'Unidades'}])

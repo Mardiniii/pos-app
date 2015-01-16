@@ -6,7 +6,6 @@ class ProductsController < ApplicationController
 
 	def create
 		@product = Product.new(product_params)
-		@product.user_id = current_user.id
 		if @product.save
 			redirect_to @product
 		end
@@ -39,6 +38,6 @@ class ProductsController < ApplicationController
 
 	private
 		def product_params
-  		params.require(:product).permit(:name, :precio, :category_id, :establishment_id)
+  		params.require(:product).permit(:name, :precio, :categorie_id, :establishment_id)
 		end
 end
