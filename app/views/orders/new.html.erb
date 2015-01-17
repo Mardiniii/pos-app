@@ -11,10 +11,10 @@
 				<h2>Agregar Producto</h2>
 				<div id="categorie_options">
 					<% @categories.each do |c| %>
-						<button type="button" class="btn pos_button_blue" id=<%= "#{c.name}" %>><%= c.name %></button>
+						<%= link_to "#{c.name}", products_by_categorie_path(:categorie => "#{c.name}"), :class => 'btn pos_button_blue', remote: true %>	
 					<% end %>
 				</div>
-				<div id="categorie_products">
+				<div id="categorie_products" class="col-md-12">
 				</div>
 			</div>
 			<div class="col-md-6 text-center">

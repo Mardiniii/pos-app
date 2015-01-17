@@ -30,7 +30,10 @@ class ProductsController < ApplicationController
 		@products = Product.all
 	end
 
-	def products_by_category
+	def products_by_categorie
+		categorie_name = params[:categorie]
+		@categorie = Categorie.find_by(name: categorie_name)
+		@products = Product.where(categorie_id: @categorie.id)
 	end
 
 	def destroy
