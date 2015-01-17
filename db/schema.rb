@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150116023443) do
+ActiveRecord::Schema.define(version: 20150117225205) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -106,9 +106,13 @@ ActiveRecord::Schema.define(version: 20150116023443) do
     t.string   "name"
     t.integer  "precio"
     t.integer  "establishment_id"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "categorie_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "products", ["establishment_id"], name: "index_products_on_establishment_id"

@@ -2,6 +2,7 @@
 	<div class="col-md-4 col-md-offset-4 text-center">
 		<h2 class="text-center">Nuevo Producto Agregado</h2>
 			<row class="text-left">
+				<%= image_tag @product.avatar.url(:medium) %>
 				<h4>Nombre: <%= @product.name %></h4>
 				<h4>Precio: <%= @product.precio %></h4>
 				<h4>Establecimiento: <%= @product.establishment.name %></h4>
@@ -24,8 +25,12 @@
 						<% end %>
 					</table>
 				</div>
-			</div>	
-		<%= link_to 'Volver a Productos', products_path, :class => 'btn btn-warning' %>
-		<%= link_to 'Agregar Item A La Receta', new_product_ingredient_path, :class => 'btn btn-warning' %>
+			</div>
+		<div class="row">
+			<div class="col-md-12">
+				<%= link_to 'Volver a Productos', products_path, :class => 'btn pos_button_blue' %>
+				<%= link_to 'Agregar Item A La Receta', new_product_ingredient_path, :class => 'btn pos_button_blue' %>	
+			</div>
+		</div>	
 	</div>
 </div>

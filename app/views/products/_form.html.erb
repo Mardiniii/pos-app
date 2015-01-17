@@ -15,7 +15,11 @@
     <%= f.label :category_id %><br>
     <%= f.collection_select(:categorie_id, Categorie.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
   </div>
+  <div class="field">
+    <%= f.label :imagen %><br>
+    <%= f.file_field :avatar, :class => "upload_avatar" %>
+  </div>
   <div class="actions form-group text-center">
-  	<%= f.submit 'Guardar Restaurante', :class => 'btn btn-primary btn-lg btn-warning' %>
+  	<%= f.submit 'Guardar Producto', :class => 'btn pos_button_blue' %>
   </div>
 <% end %>
