@@ -48,7 +48,7 @@ header {
 .navbar-default .navbar-brand {
 		font-size: 2em;
 		font-family: 'Raleway';
-		font-size: 25px;
+		font-size: 30px;
 		-webkit-transition: all .3s;
 		-moz-transition: all .3s;
 		transition: all .3s;
@@ -64,12 +64,13 @@ ul.navbar-nav li {
 
 #navbar.navbar-not-home {
 	padding: 10px 0;
-	background-color: #222;
+	background-color: #3498db;
 }
 
 #navbar.navbar-maple {
 	padding: 10px 0;
-	background-color: #222;
+	background-color: #3498db;
+	opacity: 0.9;
 }
 
 .navbar.navbar-maple .navbar-brand {
@@ -139,8 +140,8 @@ footer{
 	font-size: 7em;
 }
 #dropdown {
-	background-color: #222;
+	background-color: #3498db;
 }
 #dropdown_menu {
-	background-color: #222;
+	background-color: #3498db;
 }
