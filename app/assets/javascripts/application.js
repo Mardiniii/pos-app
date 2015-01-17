@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require scroll-navbar
 //= require scroll-to
+//= require pick_categorie
 //= require_tree .

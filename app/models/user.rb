@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, :last_name, :identification_number, :address,:city,:state,:cellphone, :phone, :email, :password, :password_confirmation, presence: true
-  has_many :establishments, dependent: :destroy
+  has_one :establishment, dependent: :destroy
   belongs_to :city
   belongs_to :state
   after_create :send_email

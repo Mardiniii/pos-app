@@ -1,3 +1,15 @@
-Este es el estado actual de su restaurante
-
-<%= @tables%>
+<div class="container">
+	<p>Actualmente cuenta con <%= @tables%> mesas en servicio</p>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+			<% (1..@tables).each do |i| %>
+			  <div class="item" id="mesa">
+			  	<div class="col-md-3 col-sm-6 col-xs-12 text-center">
+			  		<%= link_to ("<img src='http://www.crazy3dfree.com/uploads/100701/1_164217_1.jpg' class='img-responsive'>Mesa ##{i}").html_safe, new_order_path(:mesa => "#{i}") %>
+			  	</div>
+				</div>			  
+			<% end %>
+    </div>	
+		</div>
+	</div>	
+</div>

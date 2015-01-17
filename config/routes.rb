@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'orders' =>'orders#index'
   get 'admin' => 'admins#home'
   get 'kitchen' => 'cook_rooms#home'
   get 'config_user' => 'admins#setup'
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
   resources :inventarios
   resources :products
   resources :product_ingredients
+  resources :orders
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

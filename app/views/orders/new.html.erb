@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-12 text-center">
+			<h1>ORDEN PARA LA MESA <%= @mesa %>	</h1>
+		</div>
+		<div class="row">
+			
+			<div class="col-md-6 text-center">
+				<div id="pick_categorie" class="btn-group" role="group" aria-label="...">
+					<% @categories.each do |c| %>
+						<button type="button" class="btn btn-default" id=<%= "#{c.name}" %>><%= c.name %></button>
+					<% end %>
+				</div>
+			</div>
+
+		</div>
+		<div class="row">	
+			<div class="col-md-6 text-center" id="category_products">
+				
+			</div>
+		</div>
+
+	</div>
+	
+	
+</div>
