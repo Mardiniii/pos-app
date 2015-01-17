@@ -1,3 +1,6 @@
+$(function(){
+	$('#categorie_products').html('');
+});
 <% @products.each do |p| %>
 	$(function(){
 		$('#categorie_products').append("<div class='col-md-3'><%= p.name %></div>");
