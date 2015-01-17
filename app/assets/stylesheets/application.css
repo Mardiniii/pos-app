@@ -92,8 +92,10 @@ section#contact {
 footer{
 	padding: 25px 0;
 	text-align: center;
+	background-color: #3498db;
+	color: black;
 }
-#how_it_works, #team, footer {
+#how_it_works, #team {
 	background-color: #FFFFCC;
 }
 #services, #how_it_works, #contact {
@@ -144,4 +146,76 @@ footer{
 }
 #dropdown_menu {
 	background-color: #3498db;
+}
+.pos_button_blue:hover {
+	background-color: #3498db;
+	border-color: #3498db;
+	color: #fff;
+}
+.pos_button_blue:focus {
+	color: #3498db;
+}
+.pos_button_blue {
+	background-color: transparent;
+	border: 1px solid #3498db;
+	padding: 14px 20px 14px 20px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #3498db;
+	text-transform: uppercase;
+	-webkit-border-radius: 2px;
+	line-height: 1.33;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-webkit-transition: all 200ms ease-in;
+	box-sizing: border-box;
+	border-radius: 1px;
+	margin-bottom: 10px;
+}
+
+.pos_button_black:hover {
+	background-color: black;
+	border-color: black;
+	color: #fff;
+}
+.pos_button_black:focus {
+	color: black;
+}
+.pos_button_black {
+	background-color: transparent;
+	border: 2px solid black;
+	padding: 14px 25px 14px 25px;
+	font-size: 12px;
+	font-weight: bolder;
+	color: black;
+	text-transform: uppercase;
+	-webkit-border-radius: 2px;
+	line-height: 1.33;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-webkit-transition: all 200ms ease-in;
+	box-sizing: border-box;
+	border-radius: 1px;
+	margin-bottom: 10px;
+}
+
+#admin_home {
+	height: 74vh;
+}
+
+#categorie_products {
+	height: 48vh;
+}
+
+#order_products, #categorie_products {
+	border: 1px solid black;
+	border-radius: 5px; 
 }

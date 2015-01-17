@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'config_user' => 'admins#setup'
   post 'contact' => 'welcome#contact'
   root 'welcome#home'
-
+  get 'products_by_category' => 'products#products_by_category'
 
   resources :establishments
   resources :ingredients

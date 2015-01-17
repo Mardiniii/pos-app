@@ -4,24 +4,27 @@
 		<div class="col-md-12 text-center">
 			<h1>ORDEN PARA LA MESA <%= @mesa %>	</h1>
 		</div>
+
 		<div class="row">
-			
+
 			<div class="col-md-6 text-center">
-				<div id="pick_categorie" class="btn-group" role="group" aria-label="...">
+				<h2>Agregar Producto</h2>
+				<div id="categorie_options">
 					<% @categories.each do |c| %>
-						<button type="button" class="btn btn-default" id=<%= "#{c.name}" %>><%= c.name %></button>
+						<button type="button" class="btn pos_button_blue" id=<%= "#{c.name}" %>><%= c.name %></button>
 					<% end %>
+				</div>
+				<div id="categorie_products">
+				</div>
+			</div>
+			<div class="col-md-6 text-center">
+				<h2>Orden Actual</h2>
+				<div id="order_products">
+					
 				</div>
 			</div>
 
 		</div>
-		<div class="row">	
-			<div class="col-md-6 text-center" id="category_products">
-				
-			</div>
-		</div>
-
-	</div>
-	
-	
+		
+	</div>	
 </div>
