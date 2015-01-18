@@ -89,16 +89,57 @@ section#contact {
 	height: 100vh;
 	background-image: url(http://i592.photobucket.com/albums/tt5/Mardini03/word_map.png);
 	background-repeat: no-repeat; 
-    background-position: center;
+  background-position: center;
+  padding-top: 100px;
+}
+section#team {
+	height: 100vh;	
+	background-color: #F5F5F5;
+	padding-top: 100px;
+}
+
+section#users {
+	height: 100vh;
+	padding-top: 100px;
+}
+.form-group.name, .form-group.email {
+	padding-bottom: 12px;
 }
 .intro-text {
 	padding-top: 0px;
 }
-#how_it_works, #team {
-	background-color: #FFFFCC;
+#how_it_works {
+	height: 100vh;	
+	background-color: #F5F5F5;
 }
-#services, #how_it_works, #contact {
-	padding-top: 130px;
+#services, #how_it_works {
+	height: 100vh;
+	padding-top: 100px;
+}
+
+.team-member {
+		margin-bottom: 50px;
+		margin-top: 50px;
+		text-align: center;
+}
+
+.team-member img {
+		margin: 0 auto;
+		border: 7px solid #fff;
+}
+
+.team-member h4 {
+		margin-top: 25px;
+		margin-bottom: 0;
+		text-transform: none;
+}
+
+.team-member p {
+		margin-top: 0;
+	}
+
+#contact {
+	padding-top: 150px;
 }
 .intro-medium {
 	font-size: 20px;
@@ -124,12 +165,16 @@ section#contact {
 }
 .service-small {
 	font-size: 16px;
-	margin-bottom: 75px;
+	margin-bottom: 35px;
 	text-transform: none;
 	font-size: 16px;
 	font-style: italic;
 	font-weight: 400;
 	color: gray;
+}
+#contact h3.service-small, .team-member .service-small {
+	font-style: normal;
+	color: black;
 }
 .fa-6 {
 	font-size: 20em;
@@ -156,14 +201,14 @@ section#contact {
 .pos_button_blue:hover {
 	background-color: #3498db;
 	border-color: white;
-	color: #fff;
+	color: white;
 }
 .pos_button_blue:focus {
 	color: #3498db;
 }
 .pos_button_blue {
 	background-color: transparent;
-	border: 1px solid #3498db;
+	border: 2px solid #3498db;
 	padding: 14px 20px 14px 20px;
 	font-size: 12px;
 	font-weight: 500;
@@ -180,7 +225,6 @@ section#contact {
 	-webkit-transition: all 200ms ease-in;
 	box-sizing: border-box;
 	border-radius: 1px;
-	margin: 10px;
 }
 .form-group {
 	margin-bottom: 0;
@@ -269,3 +313,52 @@ footer{
 	width:100%;
 	height:80px;
 }
+
+.nav li a.pos_button_black {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_black:hover {
+	background-color: black !important;
+	color: white !important;	
+	border: 2px solid white;
+}
+
+.nav li a.pos_button_blue {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_blue:hover {
+	background-color: #3498db !important;
+	color: white !important;	
+	border: 2px solid white;
+}
+
+.nav li a.pos_button_blue.admin_rol {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_blue.admin_rol:hover {
+	color: black !important;	
+	border: 2px solid black;
+}
+
+#inventario {
+	color: rgb(241, 196, 15);
+}
+
+#cuentas {
+	color: rgb(231, 76, 60);
+}
+
+#info {
+	color: rgb(46, 204, 113);
+}
+
+#talento_humano {
+	color: rgb(243, 156, 18);
+}
+
