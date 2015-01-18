@@ -1,3 +1,4 @@
+<div class="content">
 <%= form_for @establishment do |f| %>
 	<div class="field form-group">
   	<%= f.label :name %><br>
@@ -23,7 +24,8 @@
     <%= f.label :imagen %><br>
     <%= f.file_field :avatar, :class => "upload_avatar" %>
   </div>
+</div>
   <div class="actions form-group text-center">
-  	<%= f.submit 'Guardar Restaurante', :class => 'btn btn-primary btn-lg btn-warning' %>
+  	<%= f.submit 'GUARDAR ESTABLECIMIENTO', :class => 'btn pos_button_blue' %>
   </div>
 <% end %>

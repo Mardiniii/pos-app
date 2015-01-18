@@ -1,12 +1,13 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3 text-center">
 		<h2 class="text-center">Información de Establecimiento</h2>
+			<%= image_tag @establishment.avatar.url(:medium) %>
 			<h4>Nombre: <%= @establishment.name %></h4>
 			<h4>Direccion: <%= @establishment.address %></h4>
 			<h4>Telefono: <%= @establishment.phone %></h4>
 			<h4>Numero de mesas: <%= @establishment.tables_number %></h4>
 			<h4>Numero de asientos: <%= @establishment.seats_number %></h4>
 			<h4>Fecha: <%= @establishment.created_at %></h4>
-			<%= link_to 'Continuar', admin_path, :class => 'btn btn-warning' %> 
+			<%= link_to 'Regresar', establishments_path, :class => 'btn pos_button_blue' %> 
 	</div>
 </div>

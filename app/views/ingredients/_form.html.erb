@@ -1,13 +1,15 @@
-<%= form_for @ingredient do |f| %>
-	<div class="field form-group">
-  	<%= f.label :name %><br>
-  	<%= f.text_field :name, :class => "form-control" %>
-  </div>
-  <div class="field form-group">
-  	<%= f.label :unidad_de_medida %><br>
-  	<%= f.text_field :unit_of_measurement, :class => "form-control" %>
+<div class="content">
+  <%= form_for @ingredient do |f| %>
+  	<div class="field form-group">
+    	<%= f.label :name %><br>
+    	<%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="field form-group no-padding-bottom">
+    	<%= f.label :unidad_de_medida %><br>
+    	<%= f.text_field :unit_of_measurement, :class => "form-control" %>
+    </div>
   </div>
   <div class="actions form-group text-center">
-    <%= f.submit 'Guardar Ingrediente', :class => 'btn btn-primary btn-lg btn-warning' %>
+    <%= f.submit 'Guardar Ingrediente', :class => 'btn pos_button_blue' %>
   </div>
-<% end %>
+  <% end %>

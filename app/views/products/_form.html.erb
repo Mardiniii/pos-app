@@ -1,24 +1,26 @@
-<%= form_for @product do |f| %>
-	<div class="field form-group">
-  	<%= f.label :name %><br>
-  	<%= f.text_field :name, :class => "form-control" %>
-  </div>
-  <div class="field form-group">
-  	<%= f.label :precio %><br>
-  	<%= f.text_field :precio, :class => "form-control" %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :establishment_id %><br>
-    <%= f.collection_select(:establishment_id, Establishment.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
-  </div>
-  <div class="field form-group">
-    <%= f.label :category_id %><br>
-    <%= f.collection_select(:categorie_id, Categorie.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
-  </div>
-  <div class="field">
-    <%= f.label :imagen %><br>
-    <%= f.file_field :avatar, :class => "upload_avatar" %>
-  </div>
+<div class="content">
+  <%= form_for @product do |f| %>
+  	<div class="field form-group">
+    	<%= f.label :name %><br>
+    	<%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="field form-group">
+    	<%= f.label :precio %><br>
+    	<%= f.text_field :precio, :class => "form-control" %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :establishment_id %><br>
+      <%= f.collection_select(:establishment_id, Establishment.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :category_id %><br>
+      <%= f.collection_select(:categorie_id, Categorie.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+    </div>
+    <div class="field">
+      <%= f.label :imagen %><br>
+      <%= f.file_field :avatar, :class => "upload_avatar" %>
+    </div>
+</div>
   <div class="actions form-group text-center">
   	<%= f.submit 'Guardar Producto', :class => 'btn pos_button_blue' %>
   </div>

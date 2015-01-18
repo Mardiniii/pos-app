@@ -94,12 +94,6 @@ section#contact {
 .intro-text {
 	padding-top: 0px;
 }
-footer{
-	padding: 25px 0;
-	text-align: center;
-	background-color: #3498db;
-	color: black;
-}
 #how_it_works, #team {
 	background-color: #FFFFCC;
 }
@@ -147,6 +141,8 @@ footer{
 	font-size: 7em;
 }
 .content {
+	margin-top: 15px;
+	margin-bottom: 15px;
 	padding: 25px;
 	border: 1px #3498db solid;
 	border-radius: 1px;
@@ -159,7 +155,7 @@ footer{
 }
 .pos_button_blue:hover {
 	background-color: #3498db;
-	border-color: #3498db;
+	border-color: white;
 	color: #fff;
 }
 .pos_button_blue:focus {
@@ -193,7 +189,7 @@ footer{
 
 .pos_button_black:hover {
 	background-color: black;
-	border-color: black;
+	border-color: white;
 	color: #fff;
 }
 .pos_button_black:focus {
@@ -221,6 +217,17 @@ footer{
 	margin-bottom: 10px;
 }
 
+table.table {
+	margin-bottom: 0;
+}
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0 !important; 
+}
+
 #admin_home {
 	height: 74vh;
 }
@@ -237,4 +244,28 @@ footer{
 #carousel-example-generic {
 	margin-top: 150px;
 	height: 50vh;
+}
+
+.pos_button_blue.order_categorie{
+	margin-right: 2px;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.content.categorie_content {
+	margin-right: 15px;
+}
+
+#order_title {
+	font-size: 25px;
+	margin-top: 0;
+}
+
+footer{
+	padding: 25px 0;
+	text-align: center;
+	background-color: #3498db;
+	color: black;
+	width:100%;
+	height:80px;
 }
