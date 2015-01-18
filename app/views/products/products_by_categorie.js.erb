@@ -3,10 +3,7 @@ $(function(){
 });
 <% @products.each do |p| %>
 	$(function(){
-		$('#categorie_products').append("<div class='col-md-3'><%= p.name %></div>");
+		$('#categorie_products').append("<div class='col-md-3 text-center'> <img src='<%= p.avatar.url(:thumb)%>' alt='<%= p.name %>' class='img-responsive'/><%= p.name %></div>");
 		console.log("Hay que sacar los platos");
 	});
 <% end %>
-
-
-

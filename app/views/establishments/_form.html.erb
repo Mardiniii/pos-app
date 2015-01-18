@@ -19,6 +19,10 @@
   	<%= f.label :numero_de_sillas %><br>
   	<%= f.number_field :seats_number, :class => "form-control" %>
   </div>
+  <div class="field">
+    <%= f.label :imagen %><br>
+    <%= f.file_field :avatar, :class => "upload_avatar" %>
+  </div>
   <div class="actions form-group text-center">
   	<%= f.submit 'Guardar Restaurante', :class => 'btn btn-primary btn-lg btn-warning' %>
   </div>
