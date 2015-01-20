@@ -340,6 +340,7 @@ table.table {
 	border: 1px #3498db solid;
 	border-radius: 1px;
 }
+
 .table_available {
 	margin: 5px;
 	padding: 5px;
@@ -352,6 +353,38 @@ table.table {
 	background-color: white;
 }
 .table_available img{
+	
+	border-radius: 7px;
+}
+
+.table_busy {
+	margin: 5px;
+	padding: 5px;
+	border: 1px #B22222 solid;
+	background-color: #B22222;
+	-webkit-transition: all 0.4s;
+	border-radius: 1px;
+}
+.table_busy:hover {
+	background-color: white;
+}
+.table_busy img{
+	
+	border-radius: 7px;
+}
+
+.table_checking {
+	margin: 5px;
+	padding: 5px;
+	border: 1px #3498db solid;
+	background-color: #3498db;
+	-webkit-transition: all 0.4s;
+	border-radius: 1px;
+}
+.table_checking:hover {
+	background-color: white;
+}
+.table_checking img{
 	
 	border-radius: 7px;
 }

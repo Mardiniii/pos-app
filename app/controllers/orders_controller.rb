@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
 	def index
+		@orders = Order.where(state: !4)
 		@tables = current_user.establishment.tables_number
 	end
 
@@ -12,6 +13,7 @@ class OrdersController < ApplicationController
 	def create
 		@order = Order.new(order_params)
 		@order.establishment = current_user.establishment
+		@order.state = 0
 		@order.save
 		redirect_to edit_order_path(@order)
 	end

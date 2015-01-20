@@ -12,7 +12,7 @@
 
 class Order < ActiveRecord::Base
 	# El enum de comienzo en 0
-	enum state: [ :inprocess,:ready,:kitchen, :checking ]
+	enum state: [ :inprocess, :kitchen, :ready, :checking, :done ]
   belongs_to :establishment
   has_many :order_products, dependent: :destroy
   has_many :invoice, dependent: :destroy
