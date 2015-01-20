@@ -340,17 +340,18 @@ table.table {
 	border: 1px #3498db solid;
 	border-radius: 1px;
 }
-.content_categorie {
+.table_available {
 	margin: 5px;
 	padding: 5px;
-	border: 1px #3498db solid;
+	border: 1px #9ACD32 solid;
+	background-color: #9ACD32;
 	-webkit-transition: all 0.4s;
 	border-radius: 1px;
 }
-.content_categorie:hover {
-	background-color: #3498db;
+.table_available:hover {
+	background-color: white;
 }
-.content_categorie img{
+.table_available img{
 	
 	border-radius: 7px;
 }
