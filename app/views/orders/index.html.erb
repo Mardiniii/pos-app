@@ -1,11 +1,11 @@
 <div class="container">
 	<p class="text-center">Actualmente cuenta con <%= @tables%> mesas en servicio</p>
 	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-12 col-md-offset-1">
 			<% (1..@tables).each do |i| %>
-			  <div class="item" id="mesa">
-			  	<div class="col-md-3 col-sm-6 col-xs-12 text-center">
-			  		<%= link_to ("<img src='http://www.crazy3dfree.com/uploads/100701/1_164217_1.jpg' class='img-responsive'>Mesa ##{i}").html_safe, new_order_path(:mesa => "#{i}") %>
+			  <div class="item text-center" id="mesa">
+			  	<div class="col-md-2 text-center content_categorie">
+			  		<%= link_to ("<img src='http://www.crazy3dfree.com/uploads/100701/1_164217_1.jpg' class='image-responsive text-center' height='70' width='70'><p><strong>MESA ##{i}</strong></p>").html_safe, new_order_path(:mesa => "#{i}") %>
 			  	</div>
 				</div>			  
 			<% end %>
