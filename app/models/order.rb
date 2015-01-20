@@ -13,4 +13,6 @@ class Order < ActiveRecord::Base
   belongs_to :establishment
   has_many :order_products, dependent: :destroy
   has_many :invoice, dependent: :destroy
+
+  accepts_nested_attributes_for :order_products, allow_destroy: true
 end

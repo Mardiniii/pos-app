@@ -27,7 +27,6 @@
 	      <ul class="nav navbar-nav navbar-right">
 	      	<% if current_page?(new_user_session_path) || current_page?(new_user_registration_path) %>
 				<li><%= link_to 'LOG IN', new_user_session_path, :class => "pos_button_blue admin_rol"%></li>
-		        <li><%= link_to 'SIGN UP', new_user_registration_path, :class => "pos_button_blue admin_rol"%></li> 
 	      	<% end %>
 			<% if current_page?(root_path) && !user_signed_in? %>
 		        <li><%= link_to 'QUE ES POS APP?', "#services", :class => "pos_button_black page-scroll" %></li>
@@ -35,8 +34,7 @@
 		        <li><%= link_to 'COBERTURA', "#users", :class => "pos_button_black page-scroll" %></li>
 		        <li><%= link_to 'EQUIPO', "#team", :class => "pos_button_black page-scroll" %></li>
 		        <li><%= link_to 'CONTACTO', "#contact", :class => "pos_button_black page-scroll" %></li>		     
-		        <li><%= link_to 'LOG IN', new_user_session_path, :class => "pos_button_blue page-scroll" %></li> 
-		        <li><%= link_to 'SIGN UP', new_user_registration_path, :class => "pos_button_black page-scroll" %></li>
+		        <li><%= link_to 'LOG IN', new_user_session_path, :class => "pos_button_blue page-scroll" %></li>
 	        <% end %>
 	        <% if current_page?(root_path) && user_signed_in? %>
 		        <li><%= link_to 'QUE ES POS APP?', "#services", :class => "pos_button_black page-scroll" %></li>
@@ -48,6 +46,7 @@
 	        	<li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => "pos_button_black page-scroll" %></li> 
 	        <% end %>
 	        <% if user_signed_in? && !current_page?(root_path) %>
+	        	<li> <%= link_to "#{current_user.name.upcase}", admin_path, :class => " pos_button_blue admin_rol" %> </li>
 	        	<li class="dropdown" id="dropdown">
 	  	          <a href="#" class="dropdown-toggle pos_button_blue admin_rol" data-toggle="dropdown" role="button" aria-expanded="false">ADMIN<span class="caret"></span></a>
 	  	          <ul class="dropdown-menu" id="dropdown_menu" role="menu">
@@ -58,7 +57,7 @@
 	  	            <li><%= link_to 'Inventario', inventarios_path, :class => " pos_button_blue admin_rol" %></li>
 	  	            <li>Dashboard</li>
 	  	          </ul>
-	  	          <li> <%= link_to "#{current_user.name.upcase}", admin_path, :class => " pos_button_blue admin_rol" %> </li>
+	  	          <li><%= link_to 'PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %></li>
 	  	          <li> <%= link_to "EDITAR PERFIL", edit_user_registration_path, :class => " pos_button_blue admin_rol" %> </li>
 	  	          <li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => " pos_button_blue admin_rol" %></li>
   	        	</li>

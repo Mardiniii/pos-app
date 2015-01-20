@@ -48,7 +48,7 @@
 		</div>
 	</div>
 	<% if !user_signed_in? %>
-		<%= link_to 'REGISTRATE YA!', new_user_registration_path, class: 'btn pos_button_black'%>
+		<%= link_to 'CONTACTANOS PARA UN DEMO', new_user_registration_path, class: 'btn pos_button_black'%>
 	<% end %>
 </header>
 
@@ -107,11 +107,40 @@
 
 <section id="users">
 	<h1 class="service-large text-center">COBERTURA</h1>
-	<div class="cotainer">
-		<div class="row">
-				
+	<div class="row">
+		<div class="container">
+			<div class="col-md-6">
+				<div id="map-canvas">
+					<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+			    <script>
+						$(document).on("ready page:load",function(){
+							var map;
+
+							var coordinates = new google.maps.LatLng(6.209068, -75.571744);
+							function initialize() {
+							  var mapOptions = {
+							    zoom: 16,
+							    center: coordinates
+							  };
+							  map = new google.maps.Map(document.getElementById('map-canvas'),
+							      mapOptions);
+							  var marker = new google.maps.Marker({
+		              position: coordinates,
+		              map: map,
+		              animation: google.maps.Animation.DROP,
+		              title:"Centro de Operaciones!"
+		            });
+							}
+							google.maps.event.addDomListener(window, 'load', initialize);
+						});
+			    </script>
+		    </div>
+			</div>
+			<div class="col-md-6">
+				<h3 class="service-small text-center" id="location">Actualmente nuestro centro de operaciones se encuentra en la ciudad de Medellin - Colombia. Nuestra plataforma en la nube nos permite operar en cualquier lugar del mundo, asi que sin importar tu ubicación puedes disfrutar de la prestación de nuestro servicio.</h3>
+			</div>
 		</div>
-	</div>	
+	</div>
 </section>
 
 <section id="team">

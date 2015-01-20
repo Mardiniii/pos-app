@@ -1,9 +1,6 @@
-$(function(){
-	$('#categorie_products').html('');
-});
+$('#categorie_products').html('');
+$('#categorie_products_edit').html('');
 <% @products.each do |p| %>
-	$(function(){
-		$('#categorie_products').append("<div class='col-md-3 text-center content categorie_content'> <img src='<%= p.avatar.url(:thumb)%>' alt='<%= p.name %>' class='img-responsive'/><%= p.name %></div>");
-		console.log("Hay que sacar los platos");
-	});
+	$('#categorie_products').append("<%= j render partial: 'item', locals: { product: p } %>");
+	$('#categorie_products_edit').append("<%= j render partial: 'item_edit', locals: { product: p } %>");
 <% end %>

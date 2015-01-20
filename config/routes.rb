@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'contact' => 'welcome#contact'
   root 'welcome#home'
   get 'products_by_categorie' => 'products#products_by_categorie'
+  get 'add_op' => 'orders#add_item'
+  get 'remove_op' => 'orders#remove_item'
 
   resources :establishments
   resources :ingredients

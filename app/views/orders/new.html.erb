@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container orderboard">
 	<div class="row">
 		<div class="row">
 			<div class="col-md-6 text-center">
@@ -13,8 +13,21 @@
 			</div>
 			<div class="col-md-6 text-center">
 				<h2 id="order_title">ORDEN ACTUAL</h2>
-				<div id="order_products">					
+				<div id="order_products">
+					<table id="picked-products" class="table">
+						<tr>
+							<th class="text-center">IMAGEN</th>
+							<th class="text-center">PRODUCTO</th>
+							<th class="text-center">ELIMINAR</th>
+						</tr>
+					</table>
 				</div>
+				<%= form_for @order do |f| %>
+					<%= f.hidden_field :table, value: params[:mesa] %>
+					<%= f.submit 'ORDENAR', :class => 'btn pos_button_blue' %>
+					<%= link_to 'FACTURAR', root_path, :class => 'btn pos_button_blue' %>
+					<%= link_to 'CANCELAR', orders_path, :class => 'btn pos_button_blue' %>
+				<% end %>
 			</div>
 		</div>
 	</div>	
