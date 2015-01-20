@@ -69,6 +69,7 @@
 		
 	<%= yield %>
 	
+	<% if current_page?(root_path) %>
 	<footer>
 		<div class="container">
 			<div class="row text-center">
@@ -91,6 +92,6 @@
 			</div>
 		</div>
 	</footer>
-
+	<% end %>
 </body>
 </html>

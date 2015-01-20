@@ -1,5 +1,5 @@
 <div class="container">
-	<p class="text-center">Actualmente cuenta con <%= @tables%> mesas en servicio</p>
+	<h1 class="text-center"><%= current_user.establishment.name %> - <%= @tables%> mesas en servicio</h1>
 	<div class="row">
 		<div class="col-md-12 col-md-offset-1">
 			<% (1..@tables).each do |i| %>			

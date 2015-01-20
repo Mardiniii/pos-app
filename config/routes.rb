@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'products_by_categorie' => 'products#products_by_categorie'
   get 'add_op' => 'orders#add_item'
   get 'remove_op' => 'orders#remove_item'
+  get 'generate_invoice' => 'invoices#generate_invoice'
 
   resources :establishments
   resources :ingredients

@@ -36,8 +36,9 @@
 						<% end %>
 					</table>
 				</div>
-				<%= link_to 'FACTURAR', root_path, :class => 'btn pos_button_blue' %>
+				<%= link_to 'FACTURAR', generate_invoice_path, :class => 'btn pos_button_blue' %>
 				<%= link_to order_path(@order), method: :delete, data: { confirm: '¿Esta seguro que desea cancelar esta orden?' }, :class => 'btn pos_button_blue' do %><span>ELIMINAR ORDEN</span><% end %>
+				<%= link_to 'VOLVER A PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %>
 			</div>
 		</div>
 	</div>	
