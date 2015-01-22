@@ -1,0 +1,40 @@
+<div class="row margin-container">
+	<div class="col-md-6 col-md-offset-3 text-center">
+		<h2 class="text-center">INFORMACION DE PRODUCTO</h2>
+			<row class="text-left">
+				<%= image_tag @product.avatar.url(:medium) %>
+				<div class="content">
+					<h4>NOMBRE: <%= @product.name %></h4>
+					<h4>PRECIO: <%= number_to_currency(@product.precio, :precision => 0) %></h4>
+					<h4>ESTABLECIMIENTO: <%= @product.establishment.name %></h4>
+					<h4>CATEGORIA: <%= Categorie.find(@product.categorie_id).name %></h4>
+				</div>
+			</row>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="content">
+						<table class="table">
+							<tr>
+								<th class="text-center">INGREDIENTE</th>
+								<th class="text-center">CANTIDAD</th>
+								<th class="text-center">OPCIONES</th>
+							</tr>
+							<% @product.product_ingredients.each do |i| %>
+							<tr>
+								<td><%= i.ingredient.name %></td>
+								<td><%= i.quantity %> <%= i.ingredient.unit_of_measurement %></td>
+								<td><%= link_to edit_product_ingredient_path(i) do %><span>Editar</span><% end %> - <%= link_to product_ingredient_path(i), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %> </td>
+							</tr>
+							<% end %>
+						</table>
+					</div>
+				</div>
+			</div>
+		<div class="row">
+			<div class="col-md-12">
+				<%= link_to 'Volver a Productos', products_path, :class => 'btn pos_button_blue' %>
+				<%= link_to 'Agregar Item A La Receta', new_product_ingredient_path, :class => 'btn pos_button_blue' %>	
+			</div>
+		</div>	
+	</div>
+</div>

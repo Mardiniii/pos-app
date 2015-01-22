@@ -1,0 +1,6 @@
+$('#categorie_products').html('');
+$('#categorie_products_edit').html('');
+<% @products.each do |p| %>
+	$('#categorie_products').append("<%= j render partial: 'item', locals: { product: p } %>");
+	$('#categorie_products_edit').append("<%= j render partial: 'item_edit', locals: { product: p } %>");
+<% end %>

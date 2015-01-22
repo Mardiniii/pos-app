@@ -14,23 +14,33 @@
  *= require_tree .
  *= require_self
  */
-
+body {
+	font-family: 'Raleway';
+}
 header {
-		text-align: center;
-		color: #fff;
-		background-attachment: scroll;
-		background-image: url(http://www.cervo.ch/media/archive1/mediendownloads/restaurant/restaurant_dinner02.jpg);
-		background-position: center center;
-		background-repeat: none;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		background-size: cover;
-		-o-background-size: cover;
-		height: 100vh;
-		width: 100%;
+	text-align: center;
+	color: #fff;
+	background-attachment: fixed;
+	background-image: url(http://www.cervo.ch/media/archive1/mediendownloads/restaurant/restaurant_dinner02.jpg);
+	background-position: center center;
+	background-repeat: none;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	height: 100vh;
+	width: 100%;
 }
 
+#slide1,#slide2,#slide3 {
+	background-color: transparent;
+	height: auto;
+}
+
+/*--------------navbar-------------*/
+
 .navbar-default {
+	font-family: 'Raleway';
 	padding: 25px 0;
 	border: 0;
 	background-color: transparent;
@@ -44,9 +54,15 @@ header {
 
 .navbar-default .navbar-brand {
 		font-size: 2em;
+		font-family: 'Raleway';
+		font-size: 30px;
 		-webkit-transition: all .3s;
 		-moz-transition: all .3s;
 		transition: all .3s;
+}
+
+ul.navbar-nav li {
+	font-size: 12px;
 }
 
 .navbar-default .navbar-nav>.active>a {
@@ -55,12 +71,13 @@ header {
 
 #navbar.navbar-not-home {
 	padding: 10px 0;
-	background-color: #222;
+	background-color: #3498db;
 }
 
 #navbar.navbar-maple {
 	padding: 10px 0;
-	background-color: #222;
+	background-color: #3498db;
+	opacity: 0.9;
 }
 
 .navbar.navbar-maple .navbar-brand {
@@ -70,35 +87,126 @@ header {
 .navbar-default .navbar-brand, .navbar-default .navbar-nav li a {
 	color: white;
 }
+
+/*--------------------------------*/
+
+/*---------navbar-buttons----------*/
+
+.nav li a.pos_button_black {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_black:hover {
+	background-color: transparent !important;
+	color: white !important;	
+	border: 2px solid white;
+}
+
+.nav li a.pos_button_blue {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_blue:hover {
+	background-color: #3498db !important;
+	color: white !important;	
+	border: 2px solid white;
+}
+
+.nav li a.pos_button_blue.admin_rol {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_blue.admin_rol:hover {
+	color: black !important;	
+	border: 2px solid black;
+}
+
+/*-----------------------------*/
+
 section#contact {
 	height: 100vh;
-	background-image: url(map-image.png);
-	background-position: center;
-	background-repeat: none; 
+	background-image: url(http://i592.photobucket.com/albums/tt5/Mardini03/word_map.png);
+	background-repeat: no-repeat; 
+  background-position: center;
+  padding-top: 100px;
+}
+section#team {
+	height: 100vh;	
+	background-color: #F5F5F5;
+	padding-top: 100px;
+}
+
+section#users {
+	height: 100vh;
+	padding-top: 100px;
+}
+
+#location {
+	margin-top: 150px;
+}
+
+#map-canvas {
+    height: 50vh;
+    margin-top: 50px;
+  }
+
+.form-group.name, .form-group.email {
+	padding-bottom: 12px;
 }
 .intro-text {
+	padding-top: 0px;
+}
+#how_it_works {
+	height: 100vh;	
+	background-color: #F5F5F5;
+}
+#services, #how_it_works {
+	height: 100vh;
+	padding-top: 100px;
+}
+
+.team-member {
+		margin-bottom: 50px;
+		margin-top: 50px;
+		text-align: center;
+}
+
+.team-member img {
+		margin: 0 auto;
+		border: 7px solid #fff;
+}
+
+.team-member h4 {
+		margin-top: 25px;
+		margin-bottom: 0;
+		text-transform: none;
+}
+
+.team-member p {
+		margin-top: 0;
+	}
+
+#contact {
 	padding-top: 150px;
 }
-footer{
-	padding: 25px 0;
-	text-align: center;
-}
-#how_it_works, #team, footer {
-	background-color: #FFFFCC;
-}
-#services, #how_it_works, #contact {
-	padding-top: 130px;
-}
 .intro-medium {
-	font-size: 40px;
+	font-size: 20px;
 	line-height: 40px;
+	text-shadow: 2px 2px black;
 }
 .intro-large {
-	font-size: 75px;
+	padding-top: 0px;
+	font-size: 28px;
 	line-height: 75px;
+	text-shadow: 2px 2px black;
 }
 #submedium {
-	padding-top: 180px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-shadow: 1px 1px black;
 }
 .service-large {
 	font-size: 40px;
@@ -108,10 +216,290 @@ footer{
 }
 .service-small {
 	font-size: 16px;
-	margin-bottom: 75px;
+	margin-bottom: 35px;
 	text-transform: none;
 	font-size: 16px;
 	font-style: italic;
 	font-weight: 400;
 	color: gray;
 }
+#contact h3.service-small, .team-member .service-small {
+	font-style: normal;
+	color: black;
+}
+.fa-6 {
+	font-size: 20em;
+}
+.fa-5 {
+	font-size: 12em;
+}
+.fa-4 {
+	font-size: 7em;
+}
+#dropdown {
+	background-color: #3498db;
+}
+#dropdown_menu {
+	background-color: #3498db;
+}
+/*--------Buttons----------*/
+
+.pos_button_blue:hover {
+	background-color: #3498db;
+	border-color: white;
+	color: white;
+}
+.pos_button_blue:focus {
+	color: #3498db;
+}
+.pos_button_blue {
+	background-color: transparent;
+	border: 2px solid #3498db;
+	padding: 14px 20px 14px 20px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #3498db;
+	text-transform: uppercase;
+	-webkit-border-radius: 2px;
+	line-height: 1.33;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-webkit-transition: all 200ms ease-in;
+	box-sizing: border-box;
+	border-radius: 1px;
+}
+.form-group {
+	margin-bottom: 0;
+	padding-bottom: 18px;
+}
+
+.pos_button_black:hover {
+	background-color: black;
+	border-color: white;
+	color: #fff;
+}
+.pos_button_black:focus {
+	color: black;
+}
+.pos_button_black {
+	background-color: transparent;
+	border: 2px solid black;
+	padding: 14px 25px 14px 25px;
+	font-size: 12px;
+	font-weight: bolder;
+	color: black;
+	text-transform: uppercase;
+	-webkit-border-radius: 2px;
+	line-height: 1.33;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-webkit-transition: all 200ms ease-in;
+	box-sizing: border-box;
+	border-radius: 1px;
+	margin-bottom: 10px;
+}
+
+.pos_button_blue.order_categorie{
+	margin-right: 2px;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+header .btn.pos_button_black {
+	margin-top: 30px;
+}
+
+/*---------------------*/
+table.table {
+	margin-bottom: 0;
+}
+.table tbody>tr>td.vert-align{
+    vertical-align: middle;
+}
+
+.no-padding-bottom {
+	padding-bottom: 0 !important; 
+}
+
+#admin_home {
+	height: 74vh;
+}
+/*------------ORDER VIEW----------------*/
+.content {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 25px;
+	border: 1px #3498db solid;
+	border-radius: 1px;
+}
+
+.table_available {
+	margin: 5px;
+	padding: 5px;
+	border: 1px #9ACD32 solid;
+	background-color: #9ACD32;
+	-webkit-transition: all 0.4s;
+	border-radius: 1px;
+}
+.table_available:hover {
+	background-color: white;
+}
+.table_available img{
+	
+	border-radius: 7px;
+}
+
+.table_busy {
+	margin: 5px;
+	padding: 5px;
+	border: 1px #B22222 solid;
+	background-color: #B22222;
+	-webkit-transition: all 0.4s;
+	border-radius: 1px;
+}
+.table_busy:hover {
+	background-color: white;
+}
+.table_busy img{
+	
+	border-radius: 7px;
+}
+
+.table_checking {
+	margin: 5px;
+	padding: 5px;
+	border: 1px #3498db solid;
+	background-color: #3498db;
+	-webkit-transition: all 0.4s;
+	border-radius: 1px;
+}
+.table_checking:hover {
+	background-color: white;
+}
+.table_checking img{
+	
+	border-radius: 7px;
+}
+
+#categorie_options {
+	margin-bottom: 20px;
+}
+
+#categorie_products, #categorie_products_edit {
+	height: 65vh;
+}
+
+#order_products, #categorie_products, #categorie_products_edit {
+	border: 1px solid black;
+	border-radius: 5px; 
+}
+
+#order_products {
+	height: 64vh;
+	margin-bottom: 25px;
+	overflow: scroll;
+}
+
+.content.categorie_content {
+	margin-right: 15px;
+}
+
+.content.categorie_content:hover {
+	margin-right: 15px;
+	color: white;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	transition: all .2s;
+	background-color: #3498db;
+}
+
+/*----------------------------------------*/
+
+#carousel-example-generic {
+	margin-top: 150px;
+	height: 50vh;
+}
+
+#order_title {
+	font-size: 25px;
+	margin-top: 0;
+}
+
+footer{
+	padding: 25px 0;
+	text-align: center;
+	background-color: #3498db;
+	color: black;
+	width:100%;
+	height:80px;
+}
+
+#inventario {
+	color: rgb(241, 196, 15);
+}
+
+#cuentas {
+	color: rgb(231, 76, 60);
+}
+
+#info {
+	color: rgb(46, 204, 113);
+}
+
+#talento_humano {
+	color: rgb(243, 156, 18);
+}
+
+.container.orderboard {
+	height: 80vh;
+}
+
+/*----------------INVOICE VIEW-----------------*/
+#consumed_products {
+	height: 70vh;
+	border: 1px solid black;
+	border-radius: 5px; 
+	overflow: scroll;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.receipt_products {
+	height: 61vh;
+	border: 1px solid black;
+	border-radius: 5px; 
+	overflow: scroll;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn.pos_button_blue.admin_rol.invoice {
+	margin-top: 12px; 
+}
+
+td.invoice_cell {
+	height: 50px;
+}
+
+
+/*---------------------------------------------*/
+/*---------------------KITCHEN VIEW------------*/
+div.comanda {
+	border: 2px solid #3498db;
+	margin: 3px; 
+	-webkit-transition: all .5s;
+}
+div.comanda:hover {
+	background-color: #3498db;
+	color: black;
+	border-color: black;
+}
+/*---------------------------------------------*/

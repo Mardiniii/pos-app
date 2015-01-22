@@ -1,0 +1,4 @@
+<div data-id='<%= product.id%>' data-name='<%= product.name %>' data-image='<%= product.avatar.url %>' class='col-md-3 text-center content categorie_content pick-product'>
+	<img src='<%= product.avatar.url(:thumb) %>' alt='<%= product.name %>' class='img-responsive'/>
+	<%= product.name %>
+</div>

@@ -1,1 +1,46 @@
-<h1>Aqui se debe ver la vista para la cocina</h1>
+<div class="container-fluid orderboard">
+	<h1>ORDENES EN COCINA</h1>
+	<div class="row" id="comandas"></div>
+</div>
+
+<script src="//js.pusher.com/2.2/pusher.min.js"></script>
+<script>
+	var counter = 1; //Lleva conteo de todas las comandas
+	var pusher = new Pusher('8c9fc3c508a1d4285dbf');
+	var channel = pusher.subscribe('establishment-<%= current_user.establishment.id %>');
+	channel.bind('new-order', function(data) {
+		console.log("LLEGO UNA NUEVA ORDEN");
+		console.log(data);
+		estoLlego = data;
+		order = JSON.parse(data.order);
+		order_products = JSON.parse(data.product);
+		for (i = 0; i < order_products.length; i++) {
+				if (order_products[i].product.categorie_id != 1 ) {
+					$("#comandas").prepend('<div class="col-md-2 col-xs-3 comanda" data-order_product="'+order_products[i].id+'"><h4 class="text-center">Comanda # '+counter+'</h4><h4 class="text-center">Mesa #'+order.table+'</h4><p>'+order_products[i].product.name+'</p></div>');
+					counter++;
+				};
+		}
+	});
+	channel.bind('new-adition-to-order', function(data) {
+		console.log("SE AGREGO ALGO A LA ORDEN");
+		console.log(data);
+		order = data.order;
+		order_product = JSON.parse(data.order_product);
+		product = JSON.parse(data.product);
+		counter++;
+		$("#comandas").prepend('<div class="col-md-2 col-xs-3 comanda" data-order_product="'+order_product.id+'"><h4 class="text-center">Comanda # '+counter+'</h4><h4 class="text-center">Mesa #'+order.table+'</h4><p>'+product.name+'</p></div>');
+		console.log(product.name);
+		
+	});
+	channel.bind('item_delete-from-order', function(data) {
+		console.log("SE BORRO ALGO DE LA ORDEN");
+		console.log(data);
+		order_product = JSON.parse(data.order_product);
+		$("div").find("[data-order_product='" + order_product.id + "']").remove();
+		counter++;
+	});
+
+	$('#comandas').on('click','.comanda',function(){
+		$(this).remove();
+	});
+</script>

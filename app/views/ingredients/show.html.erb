@@ -1,0 +1,10 @@
+<div class="row margin-container">
+	<div class="col-md-4 col-md-offset-4 text-center">
+		<h2 class="text-center">Nuevo Ingrediente Agregado</h2>
+		<div class="container text-left">
+			<h4>Nombre: <%= @ingredient.name %></h4>
+			<h4>Unidad de medida: <%= @ingredient.unit_of_measurement %></h4>
+		</div>
+		<%= link_to 'Continuar', admin_path, :class => 'btn btn-warning' %> 
+	</div>
+</div>

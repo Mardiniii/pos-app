@@ -11,9 +11,20 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
 //= require bootstrap-sprockets
+//= require jquery_ujs
 //= require turbolinks
 //= require scroll-navbar
 //= require scroll-to
+//= require pick_categorie
 //= require_tree .
+
+$(document).on("page:change",function(){
+	$('.carousel-control.left').click(function() {
+	  $('#carousel-example-generic').carousel('prev');
+	});
+
+	$('.carousel-control.right').click(function() {
+	  $('#carousel-example-generic').carousel('next');
+	});
+});

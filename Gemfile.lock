@@ -54,6 +54,10 @@ GEM
       slop (~> 3.6)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.4)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -84,6 +88,9 @@ GEM
     formatador (0.2.5)
     globalid (0.3.0)
       activesupport (>= 4.1.0)
+    gravatar-ultimate (2.0.0)
+      activesupport (>= 2.3.14)
+      rack
     guard (2.11.0)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -98,8 +105,10 @@ GEM
       guard (~> 2.8)
       multi_json (~> 1.8)
     hike (1.2.3)
+    hirb (0.7.2)
     hitimes (1.2.2)
     http_parser.rb (0.6.0)
+    httpclient (2.6.0.1)
     i18n (0.7.0)
     jbuilder (2.2.6)
       activesupport (>= 3.0.0, < 5)
@@ -130,11 +139,20 @@ GEM
       nenv (~> 0.1)
       shellany (~> 0.0)
     orm_adapter (0.5.0)
+    paperclip (4.2.0)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.3)
+      mime-types
     pg (0.18.1)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pusher (0.14.4)
+      httpclient (~> 2.5)
+      multi_json (~> 1.0)
+      signature (~> 0.1.8)
     rack (1.6.0)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -186,6 +204,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     shellany (0.0.1)
+    signature (0.1.8)
     slop (3.6.0)
     spring (1.2.0)
     sprockets (2.12.3)
@@ -229,11 +248,15 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-rails
+  gravatar-ultimate
   guard
   guard-livereload
+  hirb
   jbuilder (~> 2.0)
   jquery-rails
+  paperclip (~> 4.2)
   pg
+  pusher
   rails (= 4.2.0)
   rails_12factor
   sass-rails (~> 5.0)

@@ -1,0 +1,17 @@
+<%= form_for @item, url: inventarios_path do |f| %>
+  <div class="field form-group">
+    <%= f.label :establishment_id %><br>
+    <%= collection_select(:establishment_ingredient, :establishment_id, User.find(current_user.id).establishments, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :ingredient_id %><br>
+    <%= collection_select(:establishment_ingredient, :ingredient_id, Ingredient.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :quantity, :class => "form-control" %>
+  </div>
+  <div class="actions form-group text-center">
+    <%= f.submit 'Guardar Item', :class => 'btn btn-primary btn-lg btn-warning' %>
+  </div>
+<% end %>

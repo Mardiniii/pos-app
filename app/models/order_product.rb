@@ -12,4 +12,5 @@
 class OrderProduct < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
+  has_one :invoice_products
 end

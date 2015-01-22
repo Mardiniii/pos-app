@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150113200623) do
+ActiveRecord::Schema.define(version: 20150121192834) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -42,9 +42,13 @@ ActiveRecord::Schema.define(version: 20150113200623) do
     t.string   "phone"
     t.integer  "tables_number"
     t.integer  "seats_number"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "ingredients", force: :cascade do |t|
@@ -56,13 +60,13 @@ ActiveRecord::Schema.define(version: 20150113200623) do
 
   create_table "invoice_products", force: :cascade do |t|
     t.integer  "invoice_id"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "order_product_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   add_index "invoice_products", ["invoice_id"], name: "index_invoice_products_on_invoice_id"
-  add_index "invoice_products", ["product_id"], name: "index_invoice_products_on_product_id"
+  add_index "invoice_products", ["order_product_id"], name: "index_invoice_products_on_order_product_id"
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "order_id"
@@ -87,6 +91,7 @@ ActiveRecord::Schema.define(version: 20150113200623) do
     t.integer  "establishment_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "state"
   end
 
   add_index "orders", ["establishment_id"], name: "index_orders_on_establishment_id"
@@ -106,10 +111,13 @@ ActiveRecord::Schema.define(version: 20150113200623) do
     t.string   "name"
     t.integer  "precio"
     t.integer  "establishment_id"
-    t.integer  "product_ingredient_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "categorie_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "products", ["establishment_id"], name: "index_products_on_establishment_id"

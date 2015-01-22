@@ -1,0 +1,17 @@
+<%= form_for @item do |f| %>
+  <div class="field form-group">
+    <%= f.label :producto %><br>
+    <%= f.collection_select(:product_id, Product.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :ingrediente %><br>
+    <%= f.collection_select(:ingredient_id, Ingredient.all, :id, :name, {include_blank: true}, {:class => 'form-control'}) %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :cantidad %><br>
+    <%= f.number_field :quantity, :class => "form-control" %>
+  </div>
+  <div class="actions form-group text-center">
+  	<%= f.submit 'Guardar Item', :class => 'btn btn-primary btn-lg btn-warning' %>
+  </div>
+<% end %>

@@ -1,0 +1,49 @@
+<div class="container orderboard">
+	<div class="row">
+		<div class="row">
+			<div class="col-md-6 text-center">
+				<h2 id="order_title">AGREGAR PRODUCTO A LA MESA <%= @mesa %></h2>
+				<div id="categorie_options">
+					<% @categories.each do |c| %>
+						<%= link_to "#{c.name}", products_by_categorie_path(:categorie => "#{c.name}", :order_id => "#{@order.id}" ), :class => 'btn pos_button_blue order_categorie', remote: true %>	
+					<% end %>
+				</div>
+				<div id="categorie_products_edit" class="col-md-12">
+				</div>
+			</div>
+			<div class="col-md-6 text-center">
+				<h2 id="order_title">ORDEN ACTUAL - <%= @order.id %></h2>
+				<div id="order_products">
+					<table id="picked-products" class="table">
+						<tr>
+							<th class="text-center"><strong>IMAGEN</strong></th>
+							<th class="text-center"><strong>PRODUCTO</strong></th>
+							<th class="text-center"><strong>ELIMINAR</strong></th>
+						</tr>
+						
+						<% @order.order_products.each_with_index do |i,index| %>
+							<% if @op_ids.include?(i.id) %>
+								<tr class="success">
+							<% else %>
+								<tr class="danger">
+							<% end %>
+								<td class="text-center">
+									<%= image_tag(i.product.avatar.url(:medium), height: '30', width: '30') %>
+								</td>
+								<td class="text-center">
+									<%= i.product.name %>
+								</td> 
+								<td class="text-center">
+									<%= link_to remove_op_path(:op_id => "#{i.id}"), data: { pos:"#{index}", id:"#{i.id}" }, :class => 'delete-product btn btn-danger', remote: true do %><span>Eliminar Item</span><% end %>
+								</td>
+							</tr>							
+						<% end %>
+					</table>
+				</div>
+				<%= link_to 'FACTURAR', generate_invoice_path(:order_id => "#{@order.id}"), :class => 'btn pos_button_blue' %>
+				<%= link_to order_path(@order), method: :delete, data: { confirm: '¿Esta seguro que desea cancelar esta orden?' }, :class => 'btn pos_button_blue' do %><span>ELIMINAR ORDEN</span><% end %>
+				<%= link_to 'VOLVER A PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %>
+			</div>
+		</div>
+	</div>	
+</div>

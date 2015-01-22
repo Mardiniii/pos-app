@@ -1,0 +1,7 @@
+alert("Imprimir Recibo");
+
+$('#receipe_products').html('');
+
+<% @params[:invoice_products_attributes].each do |k, op| %>
+	$(':input[value="<%= op[:order_product_id] %>"]').remove();
+<% end %>

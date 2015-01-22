@@ -1,0 +1,11 @@
+<tr class="danger">
+	<td class="text-center">
+		<%= image_tag(i.product.avatar.url(:medium), height: '30', width: '30') %>
+	</td>
+	<td class="text-center">
+		<%= i.product.name %>
+	</td> 
+	<td class="text-center">
+		<%= link_to remove_op_path(@order, :op_id => "#{i.id}"), data: { id:"#{i.id}" }, :class => 'delete-product btn btn-danger', remote: true do %><span>Eliminar Item</span><% end %>
+	</td>
+</tr>
