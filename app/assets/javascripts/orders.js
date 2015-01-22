@@ -10,14 +10,8 @@ $(document).on("page:change", function(){
 	})
 
 	$('#order_products').on('click', '.delete-product', function(){
-		var counter = 0;
 		var pos = $(this).data('pos');
-		var id_to_remove = $(this).data('id');
 		$(this).parents("tr").remove();
 		$('#product-'+pos).remove();
 	});
 });
-
-// <input id="strategy_tips_attributes_70332768605840__destroy" 
-// name="strategy[tips_attributes][70332768605840][_destroy]" type="hidden" value="false" />
-// '<a data-confirm="¿Esta seguro que desea cancelar este producto de la orden?" data-pos="'+counter+'" data-id="239" class="delete-product btn btn-danger" href="/remove_op.41?op_id=239"><span>Eliminar Item</span></a>'

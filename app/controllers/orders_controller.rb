@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
 	def index
-		@orders = Order.where(state: !4)
+		@orders = Order.where.not(state: 4)
 		@tables = current_user.establishment.tables_number
 	end
 
@@ -14,11 +14,14 @@ class OrdersController < ApplicationController
 		@order = Order.new(order_params)
 		@order.establishment = current_user.establishment
 		@order.state = 0
-		@order.save
-		redirect_to edit_order_path(@order)
+		if @order.save
+			Pusher.trigger("establishment-#{current_user.establishment.id}", 'new-order', {:order => @order.to_json,order_product: @order.order_products.to_json, product: @order.order_products.to_json(:include => [ :product ]) } )
+			redirect_to edit_order_path(@order)
+		end
 	end
 
 	def edit
+		@op_ids = InvoiceProduct.all.pluck :order_product_id
 		@mesa = params[:mesa]
 		@categories = Categorie.all
 		@order = Order.find(params[:id])
@@ -37,6 +40,9 @@ class OrdersController < ApplicationController
 		@order = Order.find(@o_id)
 		@product = Product.find(@p_id)
 		@order_product = OrderProduct.create(order_id:@o_id,product_id:@p_id)
+		if @order_product.save && @order_product.product.categorie.name != "Bebidas"
+			Pusher.trigger("establishment-#{current_user.establishment.id}", 'new-adition-to-order', {order: @order, order_product: @order_product.to_json, product: @order_product.product.to_json })
+		end
 	end
 
 	def remove_item
@@ -44,6 +50,9 @@ class OrdersController < ApplicationController
 		@order_product = OrderProduct.find(@op_id)
 		@order = Order.find(@order_product.order_id)
 		@order_product.destroy
+		if @order_product.destroy
+			Pusher.trigger("establishment-#{current_user.establishment.id}", 'item_delete-from-order', {order: @order, order_product: @order_product.to_json, product: @order_product.product.to_json })
+		end
 	end
 
 	def destroy

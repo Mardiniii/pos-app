@@ -1,0 +1,43 @@
+<div class="container orderboard">
+	<div class="row">
+
+		<div class="col-md-6">
+			<h4 class="text-center">PRODUCTOS CONSUMIDOS - ORDEN <%= @order.id %> - Mesa <%= @order.table %> </h4>
+			<div id="consumed_products" class="col-md-12">
+				<table class="table table-hover table-condensed" id="invoice_table">
+					<tr class="info">
+						<th><strong>PRODUCTO</strong></th>
+						<th><strong>VALOR</strong></th>
+					</tr>
+					<% @order.order_products.where.not(id: @op_ids).each do |item|%>
+						<tr class="invoice_row" data-id="<%= item.id %>">
+							<td class="invoice_cell product" data-name="<%= item.product.name %>"><%= item.product.name %></td>
+							<td class="invoice_cell price" data-price="<%= number_to_currency(item.product.precio, precision: 0) %>"><%= number_to_currency(item.product.precio, precision: 0) %></td>
+						</tr>
+					<% end %>
+					
+				</table>
+			</div>
+		</div>
+
+		<div id="items_to_invoice" class="col-md-6 text-center">
+			<h4>ITEMS A FACTURAR</h4>
+			<div class="col-md-12 receipt_products">
+				<table class="table" id="receipe_products">
+					<tr class="success">
+						<th class="text-center">PRODUCTO</th>
+						<th class="text-center">PRECIO</th>
+						<th class="text-center">ELIMINAR</th>
+					</tr>
+				</table>				
+			</div>
+			<%= form_for(@invoice, :remote => true) do |f| %>
+				<%= f.hidden_field :order_id, value: params[:order_id] %>
+				<%= f.submit 'RECIBO', :class => 'btn pos_button_blue admin_rol invoice', :id => 'generate_invoice' %>
+				<%= link_to 'VOLVER A PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol invoice' %>
+				<%= link_to 'VOLVER A ORDEN', edit_order_path(@order), :class => 'btn pos_button_blue admin_rol invoice' %>
+			<% end %>	
+		</div>
+
+	</div>	
+</div>

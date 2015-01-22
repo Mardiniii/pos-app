@@ -461,3 +461,45 @@ footer{
 .container.orderboard {
 	height: 80vh;
 }
+
+/*----------------INVOICE VIEW-----------------*/
+#consumed_products {
+	height: 70vh;
+	border: 1px solid black;
+	border-radius: 5px; 
+	overflow: scroll;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.receipt_products {
+	height: 61vh;
+	border: 1px solid black;
+	border-radius: 5px; 
+	overflow: scroll;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn.pos_button_blue.admin_rol.invoice {
+	margin-top: 12px; 
+}
+
+td.invoice_cell {
+	height: 50px;
+}
+
+
+/*---------------------------------------------*/
+/*---------------------KITCHEN VIEW------------*/
+div.comanda {
+	border: 2px solid #3498db;
+	margin: 3px; 
+	-webkit-transition: all .5s;
+}
+div.comanda:hover {
+	background-color: #3498db;
+	color: black;
+	border-color: black;
+}
+/*---------------------------------------------*/

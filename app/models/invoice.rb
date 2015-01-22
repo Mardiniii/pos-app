@@ -11,4 +11,5 @@
 class Invoice < ActiveRecord::Base
   belongs_to :order
   has_many :invoice_products, dependent: :destroy
+  accepts_nested_attributes_for :invoice_products, allow_destroy: true
 end

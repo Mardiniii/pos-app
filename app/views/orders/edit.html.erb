@@ -22,7 +22,11 @@
 						</tr>
 						
 						<% @order.order_products.each_with_index do |i,index| %>
-							<tr>
+							<% if @op_ids.include?(i.id) %>
+								<tr class="success">
+							<% else %>
+								<tr class="danger">
+							<% end %>
 								<td class="text-center">
 									<%= image_tag(i.product.avatar.url(:medium), height: '30', width: '30') %>
 								</td>
@@ -30,13 +34,13 @@
 									<%= i.product.name %>
 								</td> 
 								<td class="text-center">
-									<%= link_to remove_op_path(@order, :op_id => "#{i.id}"), data: { pos:"#{index}", id:"#{i.id}" }, :class => 'delete-product btn btn-danger', remote: true do %><span>Eliminar Item</span><% end %>
+									<%= link_to remove_op_path(:op_id => "#{i.id}"), data: { pos:"#{index}", id:"#{i.id}" }, :class => 'delete-product btn btn-danger', remote: true do %><span>Eliminar Item</span><% end %>
 								</td>
-							</tr>
+							</tr>							
 						<% end %>
 					</table>
 				</div>
-				<%= link_to 'FACTURAR', generate_invoice_path, :class => 'btn pos_button_blue' %>
+				<%= link_to 'FACTURAR', generate_invoice_path(:order_id => "#{@order.id}"), :class => 'btn pos_button_blue' %>
 				<%= link_to order_path(@order), method: :delete, data: { confirm: '¿Esta seguro que desea cancelar esta orden?' }, :class => 'btn pos_button_blue' do %><span>ELIMINAR ORDEN</span><% end %>
 				<%= link_to 'VOLVER A PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %>
 			</div>

@@ -20,8 +20,8 @@
       <%= f.label :imagen %><br>
       <%= f.file_field :avatar, :class => "upload_avatar" %>
     </div>
+    <div class="actions form-group text-center">
+      <%= f.submit 'Guardar Producto', :class => 'btn pos_button_blue' %>
+    </div>
+  <% end %>
 </div>
-  <div class="actions form-group text-center">
-  	<%= f.submit 'Guardar Producto', :class => 'btn pos_button_blue' %>
-  </div>
-<% end %>
