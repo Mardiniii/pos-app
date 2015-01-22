@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'add_op' => 'orders#add_item'
   get 'remove_op' => 'orders#remove_item'
   get 'generate_invoice' => 'invoices#generate_invoice'
-
+  get 'dashboard' => 'dashboard#home'
   resources :establishments
   resources :ingredients
   resources :inventarios
