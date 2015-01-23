@@ -542,7 +542,6 @@ div.comanda:hover {
 .carousel-control.left, .carousel-control.right {
 	background: none !important;
 	background-image: none;
-	filter: progid:none !important;
 }
 
 .home-text {
