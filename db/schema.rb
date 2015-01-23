@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150121192834) do
+ActiveRecord::Schema.define(version: 20150123202409) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -33,8 +36,8 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "establishment_ingredients", ["establishment_id"], name: "index_establishment_ingredients_on_establishment_id"
-  add_index "establishment_ingredients", ["ingredient_id"], name: "index_establishment_ingredients_on_ingredient_id"
+  add_index "establishment_ingredients", ["establishment_id"], name: "index_establishment_ingredients_on_establishment_id", using: :btree
+  add_index "establishment_ingredients", ["ingredient_id"], name: "index_establishment_ingredients_on_ingredient_id", using: :btree
 
   create_table "establishments", force: :cascade do |t|
     t.string   "name"
@@ -65,8 +68,8 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.datetime "updated_at",       null: false
   end
 
-  add_index "invoice_products", ["invoice_id"], name: "index_invoice_products_on_invoice_id"
-  add_index "invoice_products", ["order_product_id"], name: "index_invoice_products_on_order_product_id"
+  add_index "invoice_products", ["invoice_id"], name: "index_invoice_products_on_invoice_id", using: :btree
+  add_index "invoice_products", ["order_product_id"], name: "index_invoice_products_on_order_product_id", using: :btree
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "order_id"
@@ -74,7 +77,7 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "invoices", ["order_id"], name: "index_invoices_on_order_id"
+  add_index "invoices", ["order_id"], name: "index_invoices_on_order_id", using: :btree
 
   create_table "order_products", force: :cascade do |t|
     t.integer  "order_id"
@@ -83,8 +86,8 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "order_products", ["order_id"], name: "index_order_products_on_order_id"
-  add_index "order_products", ["product_id"], name: "index_order_products_on_product_id"
+  add_index "order_products", ["order_id"], name: "index_order_products_on_order_id", using: :btree
+  add_index "order_products", ["product_id"], name: "index_order_products_on_product_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "table"
@@ -94,7 +97,7 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.integer  "state"
   end
 
-  add_index "orders", ["establishment_id"], name: "index_orders_on_establishment_id"
+  add_index "orders", ["establishment_id"], name: "index_orders_on_establishment_id", using: :btree
 
   create_table "product_ingredients", force: :cascade do |t|
     t.integer  "product_id"
@@ -104,8 +107,8 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "product_ingredients", ["ingredient_id"], name: "index_product_ingredients_on_ingredient_id"
-  add_index "product_ingredients", ["product_id"], name: "index_product_ingredients_on_product_id"
+  add_index "product_ingredients", ["ingredient_id"], name: "index_product_ingredients_on_ingredient_id", using: :btree
+  add_index "product_ingredients", ["product_id"], name: "index_product_ingredients_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -120,7 +123,7 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.datetime "avatar_updated_at"
   end
 
-  add_index "products", ["establishment_id"], name: "index_products_on_establishment_id"
+  add_index "products", ["establishment_id"], name: "index_products_on_establishment_id", using: :btree
 
   create_table "states", force: :cascade do |t|
     t.string   "name"
@@ -151,7 +154,18 @@ ActiveRecord::Schema.define(version: 20150121192834) do
     t.integer  "city_id"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "establishment_ingredients", "establishments"
+  add_foreign_key "establishment_ingredients", "ingredients"
+  add_foreign_key "invoice_products", "invoices"
+  add_foreign_key "invoice_products", "order_products"
+  add_foreign_key "invoices", "orders"
+  add_foreign_key "order_products", "orders"
+  add_foreign_key "order_products", "products"
+  add_foreign_key "orders", "establishments"
+  add_foreign_key "product_ingredients", "ingredients"
+  add_foreign_key "product_ingredients", "products"
+  add_foreign_key "products", "establishments"
 end

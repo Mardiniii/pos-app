@@ -1,12 +1,11 @@
 <header>
 	<div class="container-fluid">
+		<% if !user_signed_in? %>
+			<%= link_to 'CONTACTANOS PARA UN DEMO', '#contact', class: 'btn pos_button_black text-left'%>
+		<% end %>
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 		  <ol class="carousel-indicators">
-		    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-		    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-		    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
 		  </ol>
-
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner">
 		    <div class="item active" id="slide1">
@@ -14,8 +13,7 @@
         			<div class="intro-text">
 						<span class="home-text">El POS-Online para restaurantes</span></br> 
 						<span class="home-text">mas SIMPLE del mundo</span></br>
-						<span class="home-text-2">Gestion eficiente y en tiempo real</span><br> 
-						<span class="home-text-2">Enterate como funciona..... </span></br>
+						<span class="home-text-2">Gestion eficiente y en tiempo real</span><br>
 					</div>
       			</div>
 		    </div>		  
@@ -27,17 +25,15 @@
 		  </a>
 		</div>
 	</div>
-	<% if !user_signed_in? %>
-		<%= link_to 'CONTACTANOS PARA UN DEMO', new_user_registration_path, class: 'btn pos_button_black'%>
-	<% end %>
 </header>
 
 <section id="services">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<h2 class="service-large"><strong>¿QUE ES POS-APP?</strong></h2>
-				<h3 class="service-small">POS-App es el primer SISTEMA POS-ONLINE para tu restaurante. POS-App te permitira tener el control de tu inventario, menu, ventas, balances e informacion financiera en tiempo real. Puedes monitorear tu negocio en todo momento y lugar desde cualquier dispositivo con conexión a internet. Una herramienta diseñada para darte control, poder y libertad en la administracion de tus negocios.</h3>
+				
+				<h2 class="service-large">COMIENZA A UTILIZARLO AHORA MISMO!</h4>
+				<h3 class="service-small">4Chef es el primer SISTEMA POS-ONLINE para tu restaurante. 4Chef te permitira tener el control de tu inventario, menu, ventas, balances e informacion financiera en tiempo real. Puedes monitorear tu negocio en todo momento y lugar desde cualquier dispositivo con conexión a internet. Una herramienta diseñada para darte control, poder y libertad en la administracion de tus negocios.</h3>
 			</div>
 		</div>
 
@@ -45,37 +41,37 @@
 			<div class="col-md-4">
 				<span class="fa-stack fa-5x">
 				  <i class="fa fa-circle fa-stack-2x" id="inventario"></i>
-				  <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+				  <i class="fa fa-calculator fa-stack-1x fa-inverse"></i>
 				</span>
-				<h4>Conoce el estado de tu inventario o bodega en todo momento y lugar</h4>
-				<p>Con Pos-App siempre podras tener al dia la cantidad de insumos necesarios para la operacion de tus establecimientos</p>
+				<h4 class="home-text-2"><strong>Sin necesidad de capacitaciones presenciales</strong></h4>
+				<p>Con 4Chef siempre podras tener al dia la cantidad de insumos necesarios para la operacion de tus establecimientos</p>
 			</div>
 			<div class="col-md-4">
 				<span class="fa-stack fa-5x" id="cuentas">
 				  <i class="fa fa-circle fa-stack-2x"></i>
-				  <i class="fa fa-calculator fa-stack-1x fa-inverse"></i>
+				  <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
 				</span>
-				<h4><strong>Digitaliza y automatiza las finanzas de tu negocio</strong></h4>
-				<p>POS-App interconecta todos los puntos claves de tu negocio, automatizando los procesos. Revisa reportes financieros, cierres de caja, balances, estadisticas, flujo de caja y todo lo relacionado con la economia de tu negocio</p>				
+				<h4 class="home-text-2"><strong>Sin ningun tipo de pago por licenciamiento</strong></h4>
+				<p>4Chef interconecta todos los puntos claves de tu negocio, automatizando los procesos.</p>				
 			</div>
 			<div class="col-md-4">
 				<span class="fa-stack fa-5x" id="info">
 				  <i class="fa fa-circle fa-stack-2x"></i>
 				  <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
 				</span>
-				<h4>Informacion al instante</h4>
+				<h4 class="home-text-2"><strong>Desde cualquier dispositivo en tiempo real</strong></h4>
 				<p>Revisa reportes financieros, cierres, balances, estadisticas, flujo de caja y todo lo relacionado con las finanzas de tu negocio</p>
 			</div>
 		</div>
 	</div>	
 </section>
 
-<section id="how_it_works">
+<!-- <section id="how_it_works">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 text-center">
-				<h2 class="service-large">COMO UTILIZAR POS-APP?</h2>
-				<h3 class="service-small">PARA IMPLEMENTAR POS-APP</h3>
+				<h2 class="service-large">COMO UTILIZAR 4Chef?</h2>
+				<h3 class="service-small">PARA IMPLEMENTAR 4Chef</h3>
 			</div>
 		</div>
 		<div class="row">
@@ -83,7 +79,7 @@
 			</div>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <section id="users">
 	<h1 class="service-large text-center">COBERTURA</h1>
@@ -131,7 +127,7 @@
 				<div class="team-member">
 					<%= image_tag(Gravatar.new("sezama03@hotmail.com").image_url+"?s=130", class:"img-responsive img-circle avatar-comments") %>
 					<h4>Sebas Mardini</h4>
-					<p class="text-muted">FOUNDER<br>Ingeniero Electronico Y Desarrollador Full Stack.<br>Emprendedor digital, apasionado por el mundo de las TIC's.</p>
+					<p class="text-muted">CO-FOUNDER<br>Ingeniero Electronico Y Desarrollador Full Stack.<br>Emprendedor digital, apasionado por el mundo de las TIC's.</p>
 					<ul class="list-inline social-buttons">
 						<li><a href="https://twitter.com/mardiniii" target="_blank"><i class="fa fa-twitter"></i></a>
 						</li>
@@ -144,9 +140,19 @@
 			</div>
 			<div class="col-md-6">
 				<div class="team-member">
-					<h3 class="service-small">Buscamos talento humano que pueda aportar al crecimiento de POS-APP. Creemos en la gente con visión, mentalidad emprendedora y mucha discplina. Queremos estructurar un buen equipo tecnico y administrativo, por lo cual, si consideras que tienes las cualidades necesarias y puedes aportar a nuestro producto, te invitamos a darle clik al siguiente icono y ponerte en contacto con nosotros.</h3>
-					<%= link_to '<span class="fa-stack fa-5x" id="talento_humano"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-lightbulb-o fa-stack-1x fa-inverse"></i></span>'.html_safe, "#contact", :class => "page-scroll"%>					
+					<%= image_tag(Gravatar.new("andresangelcuervo@gmail.com").image_url+"?s=130", class:"img-responsive img-circle avatar-comments") %>
+					<h4>Andres Angel</h4>
+					<p class="text-muted">CO-FOUNDER<br>Negociador Internacional Y Desarrollador Full Stack.<br>Emprendedor antioqueño, dispuesto a cambiar el mundo.</p>
+					<ul class="list-inline social-buttons">
+						<li><a href="https://twitter.com/andresangelc" target="_blank"><i class="fa fa-twitter"></i></a>
+						</li>
+						<li><a href="https://www.facebook.com/andresangelc" target="_blank"><i class="fa fa-facebook"></i></a>
+						</li>
+						<li><a href="https://www.linkedin.com/profile/view?id=82492286&trk=nav_responsive_tab_profile" target="_blank"><i class="fa fa-linkedin"></i></a>
+						</li>
+					</ul>
 				</div>
+			</div>
 		</div>
 	</div>
 </section>

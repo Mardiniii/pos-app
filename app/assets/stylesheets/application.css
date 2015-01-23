@@ -64,7 +64,7 @@ header {
 }
 
 .navbar-default .navbar-brand:hover {
-	color: white;
+	color: black;
 }
 
 ul.navbar-nav li {
@@ -101,8 +101,8 @@ ul.navbar-nav li {
 		color: white;
 }
 
-.navbar-default .navbar-nav li a {
-	color: #3498db;
+.navbar-default.navbar-maple li a {
+	color: white;
 }
 
 /*--------------------------------*/
@@ -116,8 +116,7 @@ ul.navbar-nav li {
 
 .nav li a.pos_button_black:hover {
 	background-color: transparent !important;
-	color: white !important;	
-	border: 2px solid white;
+	color: black !important;
 }
 
 .nav li a.pos_button_blue {
@@ -134,6 +133,7 @@ ul.navbar-nav li {
 .nav li a.pos_button_blue.admin_rol {
 	border: 2px solid transparent;
 	padding: 14px 10px 14px 10px;
+	color: white;
 }
 
 .nav li a.pos_button_blue.admin_rol:hover {
@@ -331,7 +331,13 @@ section#users {
 }
 
 header .btn.pos_button_black {
-	margin-top: 300px;
+	margin-top: 160px;
+	position: absolute;
+	left: 60px;
+	top: 300px;
+	background-color: #3498db;
+	color: white;
+	border: none;
 }
 
 /*---------------------*/
@@ -522,7 +528,7 @@ div.comanda:hover {
 /*---------------------------------------------*/
 
 #carousel-example-generic {
-	margin-top: 135px;
+	margin-top: 180px;
 	width: 50vw;
 	background-color: transparent;
 }
@@ -541,6 +547,6 @@ div.comanda:hover {
 
 .home-text-2 {
 	font-family: 'Montserrat';
-	font-size: 15px;
+	font-size: 20px;
 	color: rgb(0,23,94);
 }

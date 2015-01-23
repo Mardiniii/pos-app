@@ -20,10 +20,10 @@ gem 'hirb'
 gem 'pusher'
 gem 'chartkick'
 gem 'groupdate'
+gem 'pg'
 
 group :development, :test do
   gem 'byebug'
-  gem 'sqlite3'
   gem 'web-console', '~> 2.0'
   gem 'spring'
   gem 'guard'
@@ -31,6 +31,5 @@ group :development, :test do
 end
 
 group :production do
-	gem 'pg'
 	gem 'rails_12factor'
 end
