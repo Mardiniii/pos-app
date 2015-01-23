@@ -1,15 +1,12 @@
-<div class="container">
+<div class="container" id="orders">
 	<h1 class="text-center"><%= current_user.establishment.name %> - <%= @tables%> mesas en servicio</h1>
 	<div class="row">
-		<div class="col-md-12 col-lg-12 col-xs-12 col-md-offset-1">
-			<% (1..@tables).each do |i| %>			
-				<div class="item text-center" id="mesa">
-			  	<div class="col-md-2 col-xs-2 text-center <%= table_class(i) %>">
+		<% (1..@tables).each do |i| %>			
+			<div class="item text-center col-lg-3 col-md-2 col-xs-4" id="mesa">
+			  	<div class="text-center <%= table_class(i) %>">
 						<%= recovery_order(i) %>
 			  	</div>
-				</div>
-			<% end %>
-    </div>	
-		</div>
+			</div>
+		<% end %>
 	</div>	
 </div>

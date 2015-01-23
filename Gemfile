@@ -18,6 +18,8 @@ gem 'aws-sdk'
 gem 'gravatar-ultimate'
 gem 'hirb'
 gem 'pusher'
+gem 'chartkick'
+gem 'groupdate'
 
 group :development, :test do
   gem 'byebug'

@@ -7,12 +7,13 @@
 			<%= link_to ("<div class='thumbnail text-center'><span class='fa-stack fa-4'><i class='fa fa-square fa-stack-2x'></i><i class='fa fa-cutlery fa-stack-1x fa-inverse'></i></span><div class='caption text-center'><p>ORDENES</p></div></div>").html_safe, orders_path %>			
 		</div>
 		<div class="col-md-4">
-			<%= link_to ("<div class='thumbnail text-center'><span class='fa-stack fa-4'><i class='fa fa-square fa-stack-2x'></i><i class='fa fa-line-chart fa-stack-1x fa-inverse'></i></span><div class='caption text-center'><p>COCINA</p></div></div>").html_safe, kitchen_path %>				
+			<%= link_to ("<div class='thumbnail text-center'><span class='fa-stack fa-4'><i class='fa fa-square fa-stack-2x'></i><i class='fa fa-files-o fa-stack-1x fa-inverse'></i></span><div class='caption text-center'><p>COCINA</p></div></div>").html_safe, kitchen_path %>				
 		</div>
 	</div>
-	<div class="row text-center">
-		<%= link_to 'Agregar establecimiento', new_establishment_path, :class => 'btn pos_button_black' %>
-	</div>
+
+	<% if current_user.establishment == nil %>
+		<div class="row text-center">
+			<%= link_to 'Agregar establecimiento', new_establishment_path, :class => 'btn pos_button_black' %>
+		</div>
+	<% end %>
 </div>
-
-

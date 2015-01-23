@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PosApp</title>
+  <title>4Chef</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
   <script src="//js.pusher.com/2.2/pusher.min.js"></script>
   <%= csrf_meta_tags %>
 </head>
@@ -20,7 +21,7 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <%= link_to 'POS-App', root_path, class: "navbar-brand page-scroll" %>
+	      <%= link_to '4Chef', root_path, class: "navbar-brand page-scroll text-center" %>
 	    </div>
 
 	    <!-- Collect the nav links, forms, and other content for toggling -->
@@ -43,11 +44,11 @@
 		        <li><%= link_to 'COBERTURA', "#users", :class => "pos_button_black page-scroll" %></li>
 		        <li><%= link_to 'EQUIPO', "#team", :class => "pos_button_black page-scroll" %></li>
 		        <li><%= link_to 'CONTACTO', "#contact", :class => "pos_button_black page-scroll" %></li>	
-		        <li> <%= link_to "#{current_user.name.upcase}", admin_path, :class => "pos_button_blue page-scroll" %> </li>
+		        <li> <%= link_to "#{current_user.establishment.name.upcase}", admin_path, :class => "pos_button_blue page-scroll" %> </li>
 	        	<li><%= link_to 'LOG OUT', destroy_user_session_path, method: :delete, :class => "pos_button_black page-scroll" %></li> 
 	        <% end %>
 	        <% if user_signed_in? && !current_page?(root_path) %>
-	        	<li> <%= link_to "#{current_user.name.upcase}", admin_path, :class => " pos_button_blue admin_rol" %> </li>
+	        	<li> <%= link_to "#{current_user.establishment.name.upcase}", admin_path, :class => " pos_button_blue admin_rol" %> </li>
 	        	<li class="dropdown" id="dropdown">
 	  	          <a href="#" class="dropdown-toggle pos_button_blue admin_rol" data-toggle="dropdown" role="button" aria-expanded="false">ADMIN<span class="caret"></span></a>
 	  	          <ul class="dropdown-menu" id="dropdown_menu" role="menu">
@@ -56,7 +57,7 @@
 	  	            <li><%= link_to 'Productos', products_path, :class => " pos_button_blue admin_rol" %></li>
 	  	            <li class="divider"></li>
 	  	            <li><%= link_to 'Inventario', inventarios_path, :class => " pos_button_blue admin_rol" %></li>
-	  	            <li>Dashboard</li>
+	  	            <li><%= link_to 'Dashboard', dashboard_path, :class => " pos_button_blue admin_rol" %></li>
 	  	          </ul>
 	  	          <li><%= link_to 'PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %></li>
 	  	          <li> <%= link_to "EDITAR PERFIL", edit_user_registration_path, :class => " pos_button_blue admin_rol" %> </li>

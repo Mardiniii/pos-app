@@ -1,34 +1,32 @@
-<div class="container orderboard">
+<div class="container-fluid orderboard">
 	<div class="row">
-		<div class="row">
-			<div class="col-md-6 text-center">
-				<h2 id="order_title">AGREGAR PRODUCTO A LA MESA <%= @mesa %></h2>
-				<div id="categorie_options">
-					<% @categories.each do |c| %>
-						<%= link_to "#{c.name}", products_by_categorie_path(:categorie => "#{c.name}"), :class => 'btn pos_button_blue order_categorie', remote: true %>	
-					<% end %>
-				</div>
-				<div id="categorie_products" class="col-md-12">
-				</div>
-			</div>
-			<div class="col-md-6 text-center">
-				<h2 id="order_title">ORDEN ACTUAL</h2>
-				<div id="order_products">
-					<table id="picked-products" class="table">
-						<tr>
-							<th class="text-center">IMAGEN</th>
-							<th class="text-center">PRODUCTO</th>
-							<th class="text-center">ELIMINAR</th>
-						</tr>
-					</table>
-				</div>
-				<%= form_for @order do |f| %>
-					<%= f.hidden_field :table, value: params[:mesa] %>
-					<%= f.submit 'ORDENAR', :class => 'btn pos_button_blue' %>
-					<%= link_to 'CANCELAR', orders_path, :class => 'btn pos_button_blue' %>
-					<%= link_to 'VOLVER A PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %>
+		<div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 col-xs-12 text-center">
+			<h2 id="order_title">AGREGAR PRODUCTO A LA MESA <%= @mesa %></h2>
+			<div id="categorie_options">
+				<% @categories.each do |c| %>
+					<%= link_to "#{c.name}", products_by_categorie_path(:categorie => "#{c.name}"), :class => 'btn pos_button_blue order_categorie', remote: true %>	
 				<% end %>
 			</div>
+			<div id="categorie_products" class="col-md-12">
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 col-xs-12 col-sm-6 col-xs-12 text-center">
+			<h2 id="order_title">ORDEN ACTUAL</h2>
+			<div id="order_products">
+				<table id="picked-products" class="table">
+					<tr>
+						<th class="text-center">IMAGEN</th>
+						<th class="text-center">PRODUCTO</th>
+						<th class="text-center">ELIMINAR</th>
+					</tr>
+				</table>
+			</div>
+			<%= form_for @order do |f| %>
+				<%= f.hidden_field :table, value: params[:mesa] %>
+				<%= f.submit 'ORDENAR', :class => 'btn pos_button_blue' %>
+				<%= link_to 'CANCELAR', orders_path, :class => 'btn pos_button_blue' %>
+				<%= link_to 'VOLVER A PEDIDOS', orders_path, :class => 'btn pos_button_blue admin_rol' %>
+			<% end %>
 		</div>
 	</div>	
 </div>
