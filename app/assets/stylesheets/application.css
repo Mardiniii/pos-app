@@ -21,7 +21,7 @@ header {
 	text-align: center;
 	color: black;
 	background-attachment: fixed;
-	background-image: url(http://i592.photobucket.com/albums/tt5/Mardini03/49998-white-coat-children39s-chef-character.jpg);
+	background-image: url(http://i592.photobucket.com/albums/tt5/Mardini03/FONDO4CHEF.jpg);
 	background-position: center center;
 	background-repeat: none;
 	-webkit-background-size: cover;
@@ -112,6 +112,7 @@ ul.navbar-nav li {
 .nav li a.pos_button_black {
 	border: 2px solid transparent;
 	padding: 14px 10px 14px 10px;
+	color: #3498db !important;
 }
 
 .nav li a.pos_button_black:hover {
@@ -122,6 +123,12 @@ ul.navbar-nav li {
 .nav li a.pos_button_blue {
 	border: 2px solid transparent;
 	padding: 14px 10px 14px 10px;
+}
+
+.nav li a.pos_button_blue.acceso {
+	border: 2px solid transparent;
+	padding: 14px 10px 14px 10px;
+	color: #3498db !important;
 }
 
 .nav li a.pos_button_blue:hover {

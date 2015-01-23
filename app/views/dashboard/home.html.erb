@@ -1,3 +1,13 @@
 <div class="container">
-	<!-- line_chart User.group_by_day(:created_at).count -->
+	<div class="row">
+		<div class="col-md-6">
+			<h1>ORDENES POR DIA</h1>
+			<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+			<%= line_chart Invoice.group_by_day(:created_at).count %>
+		</div>
+		<div class="col-md-6">
+			<h1>PRODUCTOS VENDIDOS</h1>
+			<%= pie_chart Product.group(:name).count %>
+		</div>		
+	</div>
 </div>
