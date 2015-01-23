@@ -101,8 +101,8 @@ ul.navbar-nav li {
 		color: white;
 }
 
-.navbar-default.navbar-maple li a {
-	color: white;
+.navbar.navbar-default.navbar-maple li a {
+	color: white !important;
 }
 
 /*--------------------------------*/
@@ -555,4 +555,8 @@ div.comanda:hover {
 	font-family: 'Montserrat';
 	font-size: 20px;
 	color: rgb(0,23,94);
+}
+
+#textinhome, #quees {
+	margin-top: 60px;
 }

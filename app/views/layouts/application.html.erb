@@ -35,7 +35,7 @@
 		        <li><%= link_to 'COBERTURA', "#users", :class => "pos_button_black page-scroll" %></li>
 		        <li><%= link_to 'EQUIPO', "#team", :class => "pos_button_black page-scroll" %></li>
 		        <li><%= link_to 'CONTACTO', "#contact", :class => "pos_button_black page-scroll" %></li>		     
-		        <li><%= link_to 'LOG IN', new_user_session_path, :class => "pos_button_blue page-scroll acceso" %></li>
+		        <li><%= link_to 'LOG IN', new_user_session_path, :class => "pos_button_black page-scroll acceso" %></li>
 	        <% end %>
 	        <% if current_page?(root_path) && user_signed_in? %>		   	
 		        <% if current_user.establishment %>	
