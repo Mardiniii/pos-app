@@ -28,7 +28,7 @@ class EstablishmentsController < ApplicationController
 	end
 
 	def index
-		@establishments = Establishment.all
+		@establishment = current_user.establishment
 	end
 
 	def destroy

@@ -9,16 +9,14 @@
 				<th>Numero de sillas</th>
 			  <th>Ver - Editar - Borrar</th>
 			</tr>
-			<% @establishments.each do |e| %>
 			<tr>
-				<td> <%= e.name %> </td>
-				<td> <%= e.address %> </td>
-				<td> <%= e.phone %> </td>
-				<td> <%= e.tables_number %> </td>
-				<td> <%= e.seats_number %> </td>
-				<td> <%= link_to 'Ver', e %> - <%= link_to 'Editar', edit_establishment_path(e) %> - <%= link_to establishment_path(e), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
+				<td> <%= @establishment.name %> </td>
+				<td> <%= @establishment.address %> </td>
+				<td> <%= @establishment.phone %> </td>
+				<td> <%= @establishment.tables_number %> </td>
+				<td> <%= @establishment.seats_number %> </td>
+				<td> <%= link_to 'Ver', @establishment %> - <%= link_to 'Editar', edit_establishment_path(@establishment) %> - <%= link_to establishment_path(@establishment), method: :delete, data: { confirm: 'Are you sure?' } do %><span>Borrar</span><% end %></td>
 			</tr>
-			<% end %>
 		</table>
 		<%= link_to 'Agregar establecimiento', new_establishment_path %>
 	</div>
